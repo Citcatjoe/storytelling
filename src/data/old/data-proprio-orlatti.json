@@ -1,0 +1,1277 @@
+[
+  {
+    "id": 0,
+    "owner": "Avni Orllati",
+    "place": "Bavois"
+  },
+  {
+    "id": 1,
+    "owner": "Avni Orllati",
+    "place": "Bavois"
+  },
+  {
+    "id": 2,
+    "owner": "Avni Orllati",
+    "place": "Bourg-en-Lavaux"
+  },
+  {
+    "id": 3,
+    "owner": "Avni Orllati",
+    "place": "Boussens"
+  },
+  {
+    "id": 4,
+    "owner": "Avni Orllati",
+    "place": "Bussigny"
+  },
+  {
+    "id": 5,
+    "owner": "Avni Orllati",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 6,
+    "owner": "Avni Orllati",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 7,
+    "owner": "Avni Orllati",
+    "place": "Mex"
+  },
+  {
+    "id": 8,
+    "owner": "Avni Orllati",
+    "place": "Orbe"
+  },
+  {
+    "id": 9,
+    "owner": "Avni Orllati",
+    "place": "Orbe"
+  },
+  {
+    "id": 10,
+    "owner": "Avni Orllati",
+    "place": "Orbe"
+  },
+  {
+    "id": 11,
+    "owner": "Avni Orllati",
+    "place": "Ormont-Dessus"
+  },
+  {
+    "id": 12,
+    "owner": "Avni Orllati",
+    "place": "Ormont-Dessus"
+  },
+  {
+    "id": 13,
+    "owner": "Avni Orllati",
+    "place": "Prilly"
+  },
+  {
+    "id": 14,
+    "owner": "Orllati Real Estate SA",
+    "place": "Bex"
+  },
+  {
+    "id": 15,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 16,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 17,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 18,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 19,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 20,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 21,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 22,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 23,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 24,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 25,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 26,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 27,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 28,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 29,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 30,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 31,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 32,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 33,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 34,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 35,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 36,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 37,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 38,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 39,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 40,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 41,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 42,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 43,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 44,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 45,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 46,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 47,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 48,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 49,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 50,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 51,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 52,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 53,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 54,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 55,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 56,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 57,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 58,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 59,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 60,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 61,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 62,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 63,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 64,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 65,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 66,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 67,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 68,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 69,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 70,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 71,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 72,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 73,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 74,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 75,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 76,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 77,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 78,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 79,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 80,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 81,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 82,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 83,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 84,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 85,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 86,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 87,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 88,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 89,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 90,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 91,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 92,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 93,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 94,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 95,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 96,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 97,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 98,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 99,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 100,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 101,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 102,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 103,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 104,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 105,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 106,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 107,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 108,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 109,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 110,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 111,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 112,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 113,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 114,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 115,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 116,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 117,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 118,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 119,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 120,
+    "owner": "Orllati Real Estate SA",
+    "place": "Chavannes-près-Renens"
+  },
+  {
+    "id": 121,
+    "owner": "Orllati Real Estate SA",
+    "place": "Crissier"
+  },
+  {
+    "id": 122,
+    "owner": "Orllati Real Estate SA",
+    "place": "Denges"
+  },
+  {
+    "id": 123,
+    "owner": "Orllati Real Estate SA",
+    "place": "Eclépens"
+  },
+  {
+    "id": 124,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 125,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 126,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 127,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 128,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 129,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 130,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 131,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 132,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 133,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 134,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 135,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 136,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 137,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 138,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 139,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 140,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 141,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 142,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 143,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 144,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 145,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 146,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 147,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 148,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 149,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 150,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 151,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 152,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 153,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 154,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 155,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 156,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 157,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 158,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 159,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 160,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 161,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 162,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 163,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 164,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 165,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 166,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 167,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 168,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 169,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 170,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 171,
+    "owner": "Orllati Real Estate SA",
+    "place": "Epalinges"
+  },
+  {
+    "id": 172,
+    "owner": "Orllati Real Estate SA",
+    "place": "Gland"
+  },
+  {
+    "id": 173,
+    "owner": "Orllati Real Estate SA",
+    "place": "Gollion"
+  },
+  {
+    "id": 174,
+    "owner": "Orllati Real Estate SA",
+    "place": "Lausanne"
+  },
+  {
+    "id": 175,
+    "owner": "Orllati Real Estate SA",
+    "place": "Lucens"
+  },
+  {
+    "id": 176,
+    "owner": "Orllati Real Estate SA",
+    "place": "Montreux"
+  },
+  {
+    "id": 177,
+    "owner": "Orllati Real Estate SA",
+    "place": "Montreux"
+  },
+  {
+    "id": 178,
+    "owner": "Orllati Real Estate SA",
+    "place": "Nyon"
+  },
+  {
+    "id": 179,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 180,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 181,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 182,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 183,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 184,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 185,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 186,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 187,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 188,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 189,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 190,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 191,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 192,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 193,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 194,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 195,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 196,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 197,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 198,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 199,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 200,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 201,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 202,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 203,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 204,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 205,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 206,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 207,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 208,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 209,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 210,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 211,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 212,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 213,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 214,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 215,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 216,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 217,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 218,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 219,
+    "owner": "Orllati Real Estate SA",
+    "place": "Orbe"
+  },
+  {
+    "id": 220,
+    "owner": "Orllati Real Estate SA",
+    "place": "Penthalaz"
+  },
+  {
+    "id": 221,
+    "owner": "Orllati Real Estate SA",
+    "place": "Penthalaz"
+  },
+  {
+    "id": 222,
+    "owner": "Orllati Real Estate SA",
+    "place": "Penthalaz"
+  },
+  {
+    "id": 223,
+    "owner": "Orllati Real Estate SA",
+    "place": "Penthalaz"
+  },
+  {
+    "id": 224,
+    "owner": "Orllati Real Estate SA",
+    "place": "Penthalaz"
+  },
+  {
+    "id": 225,
+    "owner": "Orllati Real Estate SA",
+    "place": "Prilly"
+  },
+  {
+    "id": 226,
+    "owner": "Orllati Real Estate SA",
+    "place": "Prilly"
+  },
+  {
+    "id": 227,
+    "owner": "Orllati Real Estate SA",
+    "place": "Prilly"
+  },
+  {
+    "id": 228,
+    "owner": "Orllati Real Estate SA",
+    "place": "Prilly"
+  },
+  {
+    "id": 229,
+    "owner": "Orllati Real Estate SA",
+    "place": "Prilly"
+  },
+  {
+    "id": 230,
+    "owner": "Orllati Real Estate SA",
+    "place": "Prilly"
+  },
+  {
+    "id": 231,
+    "owner": "Orllati Real Estate SA",
+    "place": "Renens"
+  },
+  {
+    "id": 232,
+    "owner": "Orllati Real Estate SA",
+    "place": "Renens"
+  },
+  {
+    "id": 233,
+    "owner": "Orllati Real Estate SA",
+    "place": "Renens"
+  },
+  {
+    "id": 234,
+    "owner": "Orllati Real Estate SA",
+    "place": "Renens"
+  },
+  {
+    "id": 235,
+    "owner": "Orllati Real Estate SA",
+    "place": "Renens"
+  },
+  {
+    "id": 236,
+    "owner": "Orllati Real Estate SA",
+    "place": "Romanel-sur-Lausanne"
+  },
+  {
+    "id": 237,
+    "owner": "Orllati Real Estate SA",
+    "place": "Romanel-sur-Lausanne"
+  },
+  {
+    "id": 238,
+    "owner": "Orllati Real Estate SA",
+    "place": "Romanel-sur-Lausanne"
+  },
+  {
+    "id": 239,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 240,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 241,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 242,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 243,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 244,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 245,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 246,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 247,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 248,
+    "owner": "Orllati Real Estate SA",
+    "place": "Saint-Prex"
+  },
+  {
+    "id": 249,
+    "owner": "Orllati Real Estate SA",
+    "place": "Valbroye"
+  },
+  {
+    "id": 250,
+    "owner": "Orllati Real Estate SA",
+    "place": "Vallorbe"
+  },
+  {
+    "id": 251,
+    "owner": "Orllati Real Estate SA",
+    "place": "Vallorbe"
+  },
+  {
+    "id": 252,
+    "owner": "Orllati Real Estate SA",
+    "place": "Yverdon-les-Bains"
+  },
+  {
+    "id": 253,
+    "owner": "Orllati Real Estate SA",
+    "place": "Yverdon-les-Bains"
+  },
+  {
+    "id": 254,
+    "owner": "Orllati Real Estate SA",
+    "place": "Yverdon-les-Bains"
+  }
+]

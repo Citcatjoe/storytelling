@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { STORY } from '@/config/story';
+import { STORY } from '@/config/variables';
 
 export const dynamic = 'force-static';
 

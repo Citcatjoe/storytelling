@@ -1,0 +1,1024 @@
+[
+  {
+    "id": 0,
+    "owner": "Orllati Erlinda",
+    "ddn": "1996-06-19",
+    "place": "Epalinges",
+    "parcel": "555"
+  },
+  {
+    "id": 1,
+    "owner": "Orllati Destan",
+    "ddn": "1984-12-17",
+    "place": "Bavois",
+    "parcel": "1121"
+  },
+  {
+    "id": 2,
+    "owner": "Orllati Velush",
+    "ddn": "1971-01-30",
+    "place": "Boussens",
+    "parcel": "965"
+  },
+  {
+    "id": 3,
+    "owner": "Orllati Gjevgjet",
+    "ddn": "1969-03-24",
+    "place": "Boussens",
+    "parcel": "965"
+  },
+  {
+    "id": 4,
+    "owner": "Orllati Basri",
+    "ddn": "1974-05-14",
+    "place": "Boussens",
+    "parcel": ""
+  },
+  {
+    "id": 5,
+    "owner": "Orllati Basri",
+    "ddn": "1974-05-14",
+    "place": "Mex (Vaud)",
+    "parcel": "313"
+  },
+  {
+    "id": 6,
+    "owner": "Orllati Basri",
+    "ddn": "1974-05-14",
+    "place": "Mex (Vaud)",
+    "parcel": "307"
+  },
+  {
+    "id": 7,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Boussens",
+    "parcel": ""
+  },
+  {
+    "id": 8,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Mex (Vaud)",
+    "parcel": "303"
+  },
+  {
+    "id": 9,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Prilly",
+    "parcel": "907"
+  },
+  {
+    "id": 10,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Chavannes-près-Renens",
+    "parcel": "266"
+  },
+  {
+    "id": 11,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Chavannes-près-Renens",
+    "parcel": "434"
+  },
+  {
+    "id": 12,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Orbe",
+    "parcel": "242"
+  },
+  {
+    "id": 13,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Orbe",
+    "parcel": "581"
+  },
+  {
+    "id": 14,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Ormont-Dessus",
+    "parcel": "2730"
+  },
+  {
+    "id": 15,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Bussigny",
+    "parcel": "1992"
+  },
+  {
+    "id": 16,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Bavois",
+    "parcel": "1121"
+  },
+  {
+    "id": 17,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Orbe",
+    "parcel": "1068"
+  },
+  {
+    "id": 18,
+    "owner": "Orllati Avni",
+    "ddn": "1974-05-14",
+    "place": "Bourg-en-Lavaux",
+    "parcel": "9871"
+  },
+  {
+    "id": 19,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": ""
+  },
+  {
+    "id": 20,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "198"
+  },
+  {
+    "id": 21,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "229"
+  },
+  {
+    "id": 22,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "80"
+  },
+  {
+    "id": 23,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "232"
+  },
+  {
+    "id": 24,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "87"
+  },
+  {
+    "id": 25,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "233"
+  },
+  {
+    "id": 26,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "234"
+  },
+  {
+    "id": 27,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "195"
+  },
+  {
+    "id": 28,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "231"
+  },
+  {
+    "id": 29,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "308"
+  },
+  {
+    "id": 30,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "235"
+  },
+  {
+    "id": 31,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bettens",
+    "parcel": "230"
+  },
+  {
+    "id": 32,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bioley-Orjulaz",
+    "parcel": "255"
+  },
+  {
+    "id": 33,
+    "owner": "Orllati Management SA",
+    "ddn": null,
+    "place": "Bioley-Orjulaz",
+    "parcel": "349"
+  },
+  {
+    "id": 34,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Ballens",
+    "parcel": ""
+  },
+  {
+    "id": 35,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Ballens",
+    "parcel": "524"
+  },
+  {
+    "id": 36,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "969"
+  },
+  {
+    "id": 37,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "972"
+  },
+  {
+    "id": 38,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "976"
+  },
+  {
+    "id": 39,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1152"
+  },
+  {
+    "id": 40,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Valbroye",
+    "parcel": "4273"
+  },
+  {
+    "id": 41,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1005"
+  },
+  {
+    "id": 42,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1214"
+  },
+  {
+    "id": 43,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1168"
+  },
+  {
+    "id": 44,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1179"
+  },
+  {
+    "id": 45,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1010"
+  },
+  {
+    "id": 46,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "967"
+  },
+  {
+    "id": 47,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1178"
+  },
+  {
+    "id": 48,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1053"
+  },
+  {
+    "id": 49,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1515"
+  },
+  {
+    "id": 50,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "920"
+  },
+  {
+    "id": 51,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "974"
+  },
+  {
+    "id": 52,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1119"
+  },
+  {
+    "id": 53,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1215"
+  },
+  {
+    "id": 54,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1028"
+  },
+  {
+    "id": 55,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1109"
+  },
+  {
+    "id": 56,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "951"
+  },
+  {
+    "id": 57,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1031"
+  },
+  {
+    "id": 58,
+    "owner": "Orllati Granulats & Béton SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1032"
+  },
+  {
+    "id": 59,
+    "owner": "Orllati (VD) SA",
+    "ddn": null,
+    "place": "Apples",
+    "parcel": ""
+  },
+  {
+    "id": 60,
+    "owner": "Orllati (VD) SA",
+    "ddn": null,
+    "place": "Cossonay",
+    "parcel": "229"
+  },
+  {
+    "id": 61,
+    "owner": "Orllati (VD) SA",
+    "ddn": null,
+    "place": "Vufflens-la-Ville",
+    "parcel": "171"
+  },
+  {
+    "id": 62,
+    "owner": "Orllati (VD) SA",
+    "ddn": null,
+    "place": "Yens",
+    "parcel": "1534"
+  },
+  {
+    "id": 63,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Yverdon-les-Bains",
+    "parcel": ""
+  },
+  {
+    "id": 64,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Bex",
+    "parcel": "989"
+  },
+  {
+    "id": 65,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Eclépens",
+    "parcel": "256"
+  },
+  {
+    "id": 66,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Gollion",
+    "parcel": "349"
+  },
+  {
+    "id": 67,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Penthalaz",
+    "parcel": "269"
+  },
+  {
+    "id": 68,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Penthalaz",
+    "parcel": "271"
+  },
+  {
+    "id": 69,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Penthalaz",
+    "parcel": "272"
+  },
+  {
+    "id": 70,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Penthalaz",
+    "parcel": "270"
+  },
+  {
+    "id": 71,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Crissier",
+    "parcel": "705"
+  },
+  {
+    "id": 72,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "555"
+  },
+  {
+    "id": 73,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Prilly",
+    "parcel": "893"
+  },
+  {
+    "id": 74,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Prilly",
+    "parcel": "892"
+  },
+  {
+    "id": 75,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Prilly",
+    "parcel": "890"
+  },
+  {
+    "id": 76,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Prilly",
+    "parcel": "881"
+  },
+  {
+    "id": 77,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Romanel-sur-Lausanne",
+    "parcel": "121"
+  },
+  {
+    "id": 78,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Romanel-sur-Lausanne",
+    "parcel": "122"
+  },
+  {
+    "id": 79,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "268"
+  },
+  {
+    "id": 80,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "667"
+  },
+  {
+    "id": 81,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "326"
+  },
+  {
+    "id": 82,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "262"
+  },
+  {
+    "id": 83,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "264"
+  },
+  {
+    "id": 84,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "327"
+  },
+  {
+    "id": 85,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "267"
+  },
+  {
+    "id": 86,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "325"
+  },
+  {
+    "id": 87,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "260"
+  },
+  {
+    "id": 88,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "265"
+  },
+  {
+    "id": 89,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "328"
+  },
+  {
+    "id": 90,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "669"
+  },
+  {
+    "id": 91,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "665"
+  },
+  {
+    "id": 92,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "666"
+  },
+  {
+    "id": 93,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "155"
+  },
+  {
+    "id": 94,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "290"
+  },
+  {
+    "id": 95,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Denges",
+    "parcel": "293"
+  },
+  {
+    "id": 96,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Saint-Prex",
+    "parcel": "478"
+  },
+  {
+    "id": 97,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Saint-Prex",
+    "parcel": "197"
+  },
+  {
+    "id": 98,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Saint-Prex",
+    "parcel": "477"
+  },
+  {
+    "id": 99,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Lucens",
+    "parcel": "175"
+  },
+  {
+    "id": 100,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Orbe",
+    "parcel": "257"
+  },
+  {
+    "id": 101,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Renens (Vaud)",
+    "parcel": "2738"
+  },
+  {
+    "id": 102,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Renens (Vaud)",
+    "parcel": "1514"
+  },
+  {
+    "id": 103,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Renens (Vaud)",
+    "parcel": "2737"
+  },
+  {
+    "id": 104,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Saint-Prex",
+    "parcel": "2036"
+  },
+  {
+    "id": 105,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Gland",
+    "parcel": "1553"
+  },
+  {
+    "id": 106,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Nyon",
+    "parcel": "1250"
+  },
+  {
+    "id": 107,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Orbe",
+    "parcel": "2819"
+  },
+  {
+    "id": 108,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Vallorbe",
+    "parcel": "1042"
+  },
+  {
+    "id": 109,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Orbe",
+    "parcel": "2815"
+  },
+  {
+    "id": 110,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Orbe",
+    "parcel": "2816"
+  },
+  {
+    "id": 111,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Montreux",
+    "parcel": "1037"
+  },
+  {
+    "id": 112,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Montreux",
+    "parcel": "1038"
+  },
+  {
+    "id": 113,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Valbroye",
+    "parcel": "4244"
+  },
+  {
+    "id": 114,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "395"
+  },
+  {
+    "id": 115,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "389"
+  },
+  {
+    "id": 116,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "1982"
+  },
+  {
+    "id": 117,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "385"
+  },
+  {
+    "id": 118,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Lausanne",
+    "parcel": "4354"
+  },
+  {
+    "id": 119,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Prilly",
+    "parcel": "887"
+  },
+  {
+    "id": 120,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Orbe",
+    "parcel": "275"
+  },
+  {
+    "id": 121,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Orbe",
+    "parcel": "585"
+  },
+  {
+    "id": 122,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Ollon",
+    "parcel": "494"
+  },
+  {
+    "id": 123,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Renens (Vaud)",
+    "parcel": "979"
+  },
+  {
+    "id": 124,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Lausanne",
+    "parcel": "14057"
+  },
+  {
+    "id": 125,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Bex",
+    "parcel": "6830"
+  },
+  {
+    "id": 126,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Bex",
+    "parcel": "6833"
+  },
+  {
+    "id": 127,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Bex",
+    "parcel": "6831"
+  },
+  {
+    "id": 128,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Bex",
+    "parcel": "6842"
+  },
+  {
+    "id": 129,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Bex",
+    "parcel": "6832"
+  },
+  {
+    "id": 130,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Bex",
+    "parcel": "6827"
+  },
+  {
+    "id": 131,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Bex",
+    "parcel": "6829"
+  },
+  {
+    "id": 132,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Bex",
+    "parcel": "6828"
+  },
+  {
+    "id": 133,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "390"
+  },
+  {
+    "id": 134,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "261"
+  },
+  {
+    "id": 135,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "495"
+  },
+  {
+    "id": 136,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Chavannes-près-Renens",
+    "parcel": "494"
+  },
+  {
+    "id": 137,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "2720"
+  },
+  {
+    "id": 138,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "2807"
+  },
+  {
+    "id": 139,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Lausanne",
+    "parcel": "21047"
+  },
+  {
+    "id": 140,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "893"
+  },
+  {
+    "id": 141,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "624"
+  },
+  {
+    "id": 142,
+    "owner": "Orllati Real Estate SA",
+    "ddn": null,
+    "place": "Epalinges",
+    "parcel": "623"
+  },
+  {
+    "id": 143,
+    "owner": "Orllati Métal SA",
+    "ddn": null,
+    "place": "Lausanne",
+    "parcel": ""
+  },
+  {
+    "id": 144,
+    "owner": "Orllati Métal SA",
+    "ddn": null,
+    "place": "Prilly",
+    "parcel": "923"
+  },
+  {
+    "id": 145,
+    "owner": "Orllati Métal SA",
+    "ddn": null,
+    "place": "Prilly",
+    "parcel": "924"
+  }
+]

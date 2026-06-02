@@ -10,16 +10,24 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@amcharts/amcharts5": "^5.17.1",
+    "@amcharts/amcharts5-geodata": "^5.1.5",
+    "@mapbox/mapbox-gl-language": "^1.0.1",
     "@next/third-parties": "^16.0.10",
+    "mapbox-gl": "^3.21.0",
     "next": "16.0.10",
     "react": "19.2.1",
-    "react-dom": "19.2.1"
+    "react-dom": "19.2.1",
+    "react-headroom": "^3.2.1",
+    "react-medium-image-zoom": "^5.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-headroom": "^3.2.3",
+    "baseline-browser-mapping": "^2.10.10",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
     "tailwindcss": "^4",
