@@ -5,8 +5,8 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5map from "@amcharts/amcharts5/map";
 import am5geodata_switzerlandLow from "@amcharts/amcharts5-geodata/switzerlandLow";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
-import dataAll from "@/data/data-proprio-all.json";
-import coordsLookup from "@/data/municipality-coords.json";
+const dataAll: any[] = [];
+const coordsLookup: any = {};
 
 interface DataItem {
   owner: string;
