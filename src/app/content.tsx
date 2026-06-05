@@ -12,6 +12,7 @@ import { MapVis } from "@/components/MapVis";
 import { QuoteBlock } from "@/components/QuoteBlock";
 import { ActivityGrid } from "@/components/ActivityGrid";
 import { VerticalVideo } from "@/components/VerticalVideo";
+import { AutoplayVideo } from "@/components/AutoplayVideo";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
@@ -287,7 +288,7 @@ export default function Content() {
               "/images/moudon/63_Orllati_Moudon.jpg"
             ]}
             ratio="3/2"
-            overflow="med"
+            overflow="high"
             caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
 
@@ -353,7 +354,7 @@ export default function Content() {
               placeholderCount={1}
               ratio="16/9"
               placeholderTxt="Infographie"
-              overflow="med"
+              overflow="high"
             />
           </HighlightBlock>
 
@@ -382,7 +383,7 @@ export default function Content() {
               "/images/blonay/04_Orllati_Blonay.jpg"
             ]}
             ratio="3/2"
-            overflow="med"
+            overflow="high"
             caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
 
@@ -494,11 +495,11 @@ export default function Content() {
             </p>
           </div>
 
-          {/* Galerie 2 images, débordement moyen (med) */}
+          {/* Galerie 2 images, débordement élevé (high) */}
           <Gallery 
             images={[
-              "/images/corseaux/11_Orllati_Corseaux.jpg",
-              "/images/corseaux/11_Orllati_Corseaux.jpg"
+              "/images/corseaux/16_Orllati_Corseaux.jpg",
+              "/images/corseaux/24_Orllati_Corseaux.jpg"
             ]}
             ratio="3/2"
             overflow="med"
@@ -595,14 +596,14 @@ export default function Content() {
             </p>
           </div>
 
-          {/* Galerie double débordement moyen (med) */}
+          {/* Galerie double débordement élevé (high) */}
           <Gallery 
             images={[
               "/images/yens/36_Orllati_Eclépens.jpg",
               "/images/yens/36_Orllati_Eclépens.jpg"
             ]}
             ratio="3/2"
-            overflow="med"
+            overflow="high"
             caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             badge="Pour César - placer une video"
             badgeColor="rouge"
@@ -624,7 +625,7 @@ export default function Content() {
               side="right"
             >
              <VerticalVideo 
-              videoSrc="https://cdn.jwplayer.com/videos/OMQ2B8Qw-W5hRqR0L.mp4"
+              videoSrc="https://cdn.jwplayer.com/manifests/OMQ2B8Qw.m3u8"
               caption="Lorem ipsum dolor sit amet."
             />
             </SideBlock>
@@ -658,12 +659,12 @@ export default function Content() {
             </p>
           </div>
 
-          {/* Galerie double débordement moyen (med) */}
+          {/* Galerie double débordement élevé (high) */}
           <Gallery 
             placeholderCount={2}
             ratio="3/2"
             placeholderTxt="Photos archives. Camille arrive avec"
-            overflow="med"
+            overflow="high"
             caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
 
@@ -705,13 +706,20 @@ export default function Content() {
           </div>
 
           {/* Galerie full débordement, 2 images */}
-          <Gallery 
+          {/* <Gallery 
             images={[
               "/images/vernand/42_Orllati_Vernand-Dessous.jpg",
               "/images/vernand/44_Orllati_Vernand-Dessous.jpg"
             ]}
             ratio="3/2"
             overflow="high"
+            caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          /> */}
+
+          <AutoplayVideo 
+            videoSrc="https://cdn.jwplayer.com/manifests/mrrzdYkY.m3u8"
+            ratio="16/9"
+            overflow="med"
             caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
 
@@ -780,12 +788,12 @@ export default function Content() {
             </p>
           </div>
 
-          {/* Galerie 1 image, débordement moyen (med) */}
+          {/* Galerie 1 image, débordement élevé (high) */}
           <Gallery 
             placeholderCount={1}
             ratio="3/2"
             placeholderTxt="Eclépens"
-            overflow="med"
+            overflow="high"
             caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             badge="Pour César - placer une video"
             badgeColor="rouge"
@@ -850,7 +858,7 @@ export default function Content() {
 
           {/* Composant de vidéo verticale centré (320px max-width) */}
           <VerticalVideo 
-            videoSrc="https://cdn.jwplayer.com/videos/ZG7KJDpY-W5hRqR0L.mp4"
+            videoSrc="https://cdn.jwplayer.com/manifests/ZG7KJDpY.m3u8"
             caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
 

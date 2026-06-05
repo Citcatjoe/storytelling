@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from 'react';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import { BREAKOUTS } from '@/config/layout';
@@ -36,6 +37,12 @@ export function Gallery({
   badge,
   badgeColor = "rouge"
 }: GalleryProps) {
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
+
+  const handleImageLoad = (idx: number) => {
+    setLoadedImages(prev => ({ ...prev, [idx]: true }));
+  };
+
   // Détermination de la largeur d'échappement (Breakout)
   let containerClass = "w-full max-w-[672px] mx-auto px-4 md:px-0"; // low
   if (overflow === "med") {
@@ -71,17 +78,51 @@ export function Gallery({
       )}
       <div className={`grid ${gridClass}`}>
         {hasImages ? (
-          /* Mode 1 : Rendu des images réelles */
-          images.map((src, idx) => (
-            <Zoom key={idx}>
-              <img 
-                key={idx}
-                src={src} 
-                alt={caption ? `${caption} - image ${idx + 1}` : `Image ${idx + 1}`}
-                className="w-full h-auto bg-slate-100 cursor-zoom-in rounded-lg"
-              />
-            </Zoom>
-          ))
+          /* Mode 1 : Rendu des images réelles avec lazy loading & loading overlay */
+          images.map((src, idx) => {
+            const isLoaded = loadedImages[idx];
+            return (
+              <div key={idx} className="relative w-full overflow-hidden rounded-lg bg-[#E5DCC3]/10">
+                {/* Shimmer / Skeleton activity indicator */}
+                {!isLoaded && (
+                  <div className="absolute inset-0 bg-neutral-200 flex items-center justify-center min-h-[220px] overflow-hidden">
+                    {/* Shimmer Wave (high-contrast white sweep) */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/70 to-transparent animate-shimmer" />
+                    
+                    {/* Subtle image icon placeholder */}
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="1" 
+                      className="w-10 h-10 text-neutral-400/40 animate-pulse relative z-10"
+                    >
+                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                      <circle cx="9" cy="9" r="2" />
+                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                    </svg>
+                  </div>
+                )}
+                <Zoom>
+                  <img 
+                    ref={(el) => {
+                      if (el && el.complete && !isLoaded) {
+                        setTimeout(() => handleImageLoad(idx), 0);
+                      }
+                    }}
+                    src={src} 
+                    alt={caption ? `${caption} - image ${idx + 1}` : `Image ${idx + 1}`}
+                    loading="lazy"
+                    onLoad={() => handleImageLoad(idx)}
+                    className={`w-full h-auto bg-slate-50 cursor-zoom-in rounded-lg transition-opacity duration-500 ease-out ${
+                      isLoaded ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                </Zoom>
+              </div>
+            );
+          })
         ) : (
           /* Mode 2 : Rendu des placeholders de zoning */
           placeholderArray.map((_, idx) => (

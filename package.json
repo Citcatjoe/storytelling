@@ -19,7 +19,8 @@
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "react-headroom": "^3.2.1",
-    "react-medium-image-zoom": "^5.4.3"
+    "react-medium-image-zoom": "^5.4.3",
+    "video.js": "^8.23.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
+import videojs from 'video.js';
+import 'video.js/dist/video-js.css';
 
 interface VerticalVideoProps {
   videoSrc?: string;
@@ -20,45 +22,45 @@ export function VerticalVideo({
   caption,
   className = ""
 }: VerticalVideoProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const outerContainerRef = useRef<HTMLDivElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<any>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
+  const isDraggingRef = useRef(isDragging);
+  useEffect(() => {
+    isDraggingRef.current = isDragging;
+  }, [isDragging]);
+
   const togglePlay = (e: React.MouseEvent) => {
     e.stopPropagation(); // Avoid triggering video container clicks twice
-    if (videoRef.current) {
+    if (playerRef.current) {
       if (isPlaying) {
-        videoRef.current.pause();
+        playerRef.current.pause();
       } else {
-        videoRef.current.play().catch(err => {
-          console.error("Playback error:", err);
-        });
-      }
-    }
-  };
-
-  const handleTimeUpdate = () => {
-    if (videoRef.current && !isDragging) {
-      const current = videoRef.current.currentTime;
-      const duration = videoRef.current.duration;
-      if (duration) {
-        setProgress((current / duration) * 100);
+        const playPromise = playerRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch((err: any) => {
+            console.error("Playback error:", err);
+          });
+        }
       }
     }
   };
 
   const updateProgressFromClientX = (clientX: number) => {
-    if (videoRef.current && progressBarRef.current) {
+    if (playerRef.current && progressBarRef.current) {
       const rect = progressBarRef.current.getBoundingClientRect();
       const clickX = clientX - rect.left;
       const width = rect.width;
       if (width > 0) {
         const newPercentage = Math.min(Math.max(0, clickX / width), 1);
-        const duration = videoRef.current.duration;
-        if (!isNaN(duration) && isFinite(duration)) {
-          videoRef.current.currentTime = newPercentage * duration;
+        const duration = playerRef.current.duration();
+        if (duration && !isNaN(duration) && isFinite(duration)) {
+          playerRef.current.currentTime(newPercentage * duration);
         }
         setProgress(newPercentage * 100);
       }
@@ -109,24 +111,96 @@ export function VerticalVideo({
     };
   }, [isDragging]);
 
+  // Initialize Video.js Player
+  useEffect(() => {
+    if (!videoSrc) return;
+
+    const videoElement = document.createElement("video");
+    videoElement.className = "video-js w-full h-full object-cover";
+    videoElement.setAttribute("playsinline", "true");
+    videoElement.setAttribute("webkit-playsinline", "true");
+
+    if (videoContainerRef.current) {
+      videoContainerRef.current.appendChild(videoElement);
+    }
+
+    const player = videojs(videoElement, {
+      controls: false,
+      autoplay: false,
+      preload: 'auto',
+      fluid: false,
+      fill: true,
+      sources: [{
+        src: videoSrc,
+        type: videoSrc.endsWith('.m3u8') ? 'application/x-mpegURL' : 'video/mp4'
+      }]
+    });
+
+    playerRef.current = player;
+
+    player.on('play', () => setIsPlaying(true));
+    player.on('pause', () => setIsPlaying(false));
+
+    const handleTimeUpdate = () => {
+      if (!isDraggingRef.current) {
+        const current = player.currentTime();
+        const duration = player.duration();
+        if (current !== undefined && duration) {
+          setProgress((current / duration) * 100);
+        }
+      }
+    };
+
+    player.on('timeupdate', handleTimeUpdate);
+
+    // Intersection Observer to pause if it scrolls out of view
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && playerRef.current) {
+          playerRef.current.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (outerContainerRef.current) {
+      observer.observe(outerContainerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+      if (playerRef.current) {
+        playerRef.current.dispose();
+        playerRef.current = null;
+      }
+      if (videoContainerRef.current) {
+        videoContainerRef.current.innerHTML = '';
+      }
+    };
+  }, [videoSrc]);
+
   return (
     <figure className={`w-full max-w-[320px] mx-auto my-12 transition-all duration-300 ${className}`}>
       {videoSrc ? (
         /* Mode 1 : Rendu de la vidéo réelle */
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-black group" style={{ aspectRatio: '9/16' }}>
-          <video
-            ref={videoRef}
-            src={videoSrc}
-            className="w-full h-full object-cover cursor-pointer"
-            playsInline
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            onClick={togglePlay}
-            onTimeUpdate={handleTimeUpdate}
+        <div 
+          ref={outerContainerRef}
+          className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-black group" 
+          style={{ aspectRatio: '9/16' }}
+        >
+          <div
+            ref={videoContainerRef}
+            className="w-full h-full"
+          />
+
+          {/* Clickable overlay to toggle play/pause */}
+          <div 
+            onClick={togglePlay} 
+            className="absolute inset-0 cursor-pointer z-0" 
           />
           
           {/* Custom Controls Overlay */}
-          <div className="absolute inset-x-0 bottom-0 flex justify-center px-6 pt-6 pb-12 bg-gradient-to-t from-black/50 via-black/20 to-transparent pointer-events-none">
+          <div className="absolute inset-x-0 bottom-0 flex justify-center px-6 pt-6 pb-12 bg-gradient-to-t from-black/50 via-black/20 to-transparent pointer-events-none z-10">
             <button
               onClick={togglePlay}
               className={`pointer-events-auto cursor-pointer w-28 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg border border-transparent ${
