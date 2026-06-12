@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { STORY } from "@/config/variables";
 
 function BlickLogo({ color = "black" }: { color?: string }) {
@@ -18,8 +18,9 @@ function BlickLogo({ color = "black" }: { color?: string }) {
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [copied, setCopied] = useState(false);
+  const lastScrollYRef = useRef(0);
+  const isOpenRef = useRef(false);
   const [shareUrl, setShareUrl] = useState(STORY.url);
 
   useEffect(() => {
@@ -58,26 +59,25 @@ export function Header() {
   };
 
   useEffect(() => {
+    isOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
       if (currentScrollY < 100) {
-        // En haut de page, on garde le header affiché
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY) {
-        // Scrolldown -> masque le header si le menu n'est pas ouvert
-        if (!isOpen) setIsVisible(false);
+      } else if (currentScrollY > lastScrollYRef.current) {
+        if (!isOpenRef.current) setIsVisible(false);
       } else {
-        // Scrollup -> affiche le header
         setIsVisible(true);
       }
-      
-      setLastScrollY(currentScrollY);
+      lastScrollYRef.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, isOpen]);
+  }, []);
 
   return (
     <>
@@ -102,7 +102,7 @@ export function Header() {
           onClick={() => setIsOpen(true)} 
           className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer transition-colors"
         >
-          <img src="/images/icon-share-b-noborder.svg" alt="Partager" className="w-8 h-8" />
+          <img src="images/icon-share-b-noborder.svg" alt="Partager" className="w-8 h-8" />
         </button>
       </header>
 
@@ -117,27 +117,27 @@ export function Header() {
             className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer transition-colors"
             aria-label="Close"
           >
-            <img src="/images/icon-cross-black-noborder.svg" alt="Fermer" className="w-8 h-8" />
+            <img src="images/icon-cross-black-noborder.svg" alt="Fermer" className="w-8 h-8" />
           </button>
         </div>
 
         <div className="flex flex-col h-[calc(100vh-64px)] overflow-y-auto">
           {[
-            { name: "Facebook", icon: "/images/icon-facebook-b-noborder.svg", key: "Facebook" },
-            { name: "Twitter / X", icon: "/images/icon-twitter-b-noborder.svg", key: "Twitter / X" },
-            //{ name: "Threads", icon: "/images/icon-threads-b-noborder.svg", key: "Threads" },
-            { name: "LinkedIn", icon: "/images/icon-linkedin-b-noborder.svg", key: "LinkedIn" },
-            { name: "Whatsapp", icon: "/images/icon-wa-b-noborder.svg", key: "Whatsapp" },
-            { name: "Email", icon: "/images/icon-plane-b-noborder.svg", key: "Email" },
-            { name: copied ? "URL copiée !" : "Copier l'URL", icon: "/images/icon-share-b-noborder.svg", key: "Copier l'URL" }
+            { name: "Facebook", icon: "images/icon-facebook-b-noborder.svg", key: "Facebook" },
+            { name: "Twitter / X", icon: "images/icon-twitter-b-noborder.svg", key: "Twitter / X" },
+            //{ name: "Threads", icon: "images/icon-threads-b-noborder.svg", key: "Threads" },
+            { name: "LinkedIn", icon: "images/icon-linkedin-b-noborder.svg", key: "LinkedIn" },
+            { name: "Whatsapp", icon: "images/icon-wa-b-noborder.svg", key: "Whatsapp" },
+            { name: "Email", icon: "images/icon-plane-b-noborder.svg", key: "Email" },
+            { name: copied ? "URL copiée !" : "Copier l'URL", icon: "images/icon-share-b-noborder.svg", key: "Copier l'URL" }
           ].map((item, idx) => (
             <button 
               key={idx} 
               onClick={() => handleShare(item.key)}
-              className="flex cursor-pointer items-center gap-2 py-8 px-6 border-b border-gray-100 hover:bg-gray-50 text-left group transition-colors w-full"
+              className="flex cursor-pointer items-center gap-3 py-6 px-6 border-b border-gray-100 hover:bg-gray-50 text-left group transition-colors w-full"
             >
-              <span className="w-10 flex justify-center text-gray-800">
-                <img src={item.icon} alt={item.name} className="w-10 h-10 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <span className="w-9 flex justify-center text-gray-800">
+                <img src={item.icon} alt={item.name} className="w-9 h-9 opacity-80 group-hover:opacity-100 transition-opacity" />
               </span>
               <span className="text-gray-800 text-normal font-regular group-hover:text-black">{item.name}</span>
             </button>

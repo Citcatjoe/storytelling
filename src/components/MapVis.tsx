@@ -56,7 +56,7 @@ export function MapVis() {
       // Canton de Vaud GeoJSON Source
       map.current?.addSource('vaud-boundary', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/hyperknot/country-levels-export/master/geojson/high/iso2/CH/CH-VD.geojson'
+        data: './CH-VD.geojson'
       });
 
       // Fill layer (Initially transparent for fade-in)

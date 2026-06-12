@@ -1,4 +1,6 @@
 import React from 'react';
+import { Image } from './Image';
+import { mergeMargins } from '@/config/layout';
 
 interface SideBlockProps {
   side: 'left' | 'right';
@@ -63,7 +65,7 @@ export function SideBlock({
     : (colorMap[badgeColor.toLowerCase()] || "bg-gray-500");
 
   return (
-    <div className={`w-full md:w-[350px] mb-8 transition-all duration-300 ${floatClass} ${marginClass} ${breakoutClass} ${className}`}>
+    <div className={`${mergeMargins("mb-8", className)} mt-10 md:mt-0 w-full md:w-[350px] transition-all duration-300 ${floatClass} ${marginClass} ${breakoutClass}`}>
       <figure className="w-full relative">
         {badge && (
           <div className="absolute top-4 right-4 z-10 select-none">
@@ -74,52 +76,29 @@ export function SideBlock({
         )}
         {/* Priorité 1 : Rendu de l'image si imageSrc est fournie */}
         {imageSrc ? (
-          <img 
+          <Image 
             src={imageSrc} 
             alt={alt}
-            className="w-full h-auto object-cover rounded-xl shadow-md border border-gray-100"
-            style={{ aspectRatio: ratio }}
+            ratio={ratio}
+            zoomable={true}
+            forceRatio={true}
+            className="rounded-xl shadow-md border border-gray-100"
+            imgClassName="object-cover rounded-xl w-full h-full"
           />
         ) : children ? (
           /* Priorité 2 : Rendu des enfants si fournis (compatibilité) */
           children
         ) : (
           /* Priorité 3 : Gabarit de zoning (Placeholder) ultra-premium */
-          <div 
-            className="w-full rounded-2xl bg-[#E5DCC3]/15 border-2 border-dashed border-[#CBBFA0] flex flex-col items-center justify-center p-6 text-center select-none"
-            style={{ aspectRatio: ratio }}
-          >
-            {/* Icône de gabarit discrète */}
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="1" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              className="w-8 h-8 text-[#A69B7B] opacity-40 mb-3"
-            >
-              <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-              <circle cx="9" cy="9" r="2" />
-              <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-            </svg>
-            
-            {textToShow && (
-              <span className="text-sm font-medium text-[#8E8366] leading-tight mb-1.5 max-w-[80%]">
-                {textToShow}
-              </span>
-            )}
-            
-            {ratio && (
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#A69B7B] opacity-75">
-                Ratio {ratio}
-              </span>
-            )}
-          </div>
+          <Image 
+            ratio={ratio}
+            placeholderTxt={textToShow}
+            zoomable={false}
+            className="rounded-2xl border-none bg-transparent"
+          />
         )}
 
-        {/* Légende commune alignée avec les styles du composant Gallery */}
+        {/* Légende commune alignée avec les styles du composant MediaGrid */}
         {caption && (
           <figcaption className="mt-3 text-xs text-black text-left font-light">
             {caption}

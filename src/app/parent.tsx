@@ -14,14 +14,18 @@ export default function ParentLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="h-full relative">
+    <html lang="fr" className="relative">
       <head>
-        {/* Google Fonts - Poppins */}
+        {/* Force light mode — prevents Brave/Samsung Internet/iOS browser dark mode overrides */}
+        <meta name="color-scheme" content="light" />
+        <meta name="supported-color-schemes" content="light" />
+
+        {/* Google Fonts - Poppins, Share Tech Mono & Caveat (manuscrite) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
-          rel="stylesheet" 
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Share+Tech+Mono&family=Caveat:wght@500;600;700&display=swap"
+          rel="stylesheet"
         />
 
         {/* jBox CSS - External Resource */}
@@ -39,9 +43,11 @@ export default function ParentLayout({
         <Consent />
       </head>
       <body
-        className="font-sans antialiased pt-16 pb-16 2xl:pt-24 transition-all duration-300 ease-in-out bg-slate-100"
+        className="font-sans pt-16 pb-16 2xl:pt-24 transition-all duration-300 ease-in-out bg-slate-100"
       >
-        {children}
+        <div className="overflow-x-hidden w-full relative">
+          {children}
+        </div>
         <GTM />
       </body>
     </html>

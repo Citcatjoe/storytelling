@@ -17,7 +17,7 @@ export function Authors({ authors, date }: AuthorsProps) {
         <div key={i} className="flex items-center gap-3">
           {author.img && (
             <img 
-              src={`/images/${author.img}`} 
+              src={`images/${author.img}`} 
               alt={author.name} 
               className="hidden md:block w-12 h-12 rounded-full object-cover bg-gray-100" 
             />

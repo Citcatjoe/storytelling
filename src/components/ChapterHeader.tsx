@@ -1,6 +1,7 @@
 "use client";
 
 import { BREAKOUTS } from "@/config/layout";
+import { Image } from "./Image";
 
 interface ChapterHeaderProps {
   title: string;
@@ -42,49 +43,15 @@ export function ChapterHeader({
 
         {/* Colonne Droite : Image ou Gabarit de zoning (Placeholder) */}
         <div className="relative overflow-hidden w-full">
-          {src ? (
-            /* Mode 1 : Rendu de l'image si fournie en prop src */
-            <img 
-              src={src} 
-              alt={title} 
-              className="w-full h-auto transition-transform duration-700 hover:scale-105 rounded-lg object-cover" 
-              style={{ aspectRatio: ratio }}
-            />
-          ) : (
-            /* Mode 2 : Gabarit de zoning (Placeholder) si aucune src n'est passée */
-            <div 
-              className="w-full rounded-2xl bg-[#E5DCC3]/15 border-2 border-dashed border-[#CBBFA0] flex flex-col items-center justify-center p-6 text-center select-none"
-              style={{ aspectRatio: ratio }}
-            >
-              {/* Icône de gabarit discrète */}
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="1" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                className="w-8 h-8 text-[#A69B7B] opacity-40 mb-3"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-                <circle cx="9" cy="9" r="2" />
-                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-              </svg>
-              
-              {placeholderTxt && (
-                <span className="text-sm font-medium text-[#8E8366] leading-tight mb-1.5 max-w-[80%]">
-                  {placeholderTxt}
-                </span>
-              )}
-              
-              {ratio && (
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#A69B7B] opacity-75">
-                  Ratio {ratio}
-                </span>
-              )}
-            </div>
-          )}
+          <Image 
+            src={src} 
+            alt={title} 
+            ratio={ratio} 
+            placeholderTxt={placeholderTxt} 
+            zoomable={false} 
+            forceRatio={true}
+            imgClassName="transition-transform duration-700 hover:scale-105 object-cover w-full h-full" 
+          />
         </div>
 
       </div>

@@ -1,10 +1,11 @@
 "use client";
 
 import { ReactNode } from "react";
-import { BREAKOUTS } from "@/config/layout";
+import { BREAKOUTS, mergeMargins } from "@/config/layout";
 
 interface HighlightBlockProps {
   title?: string;
+  text?: string;
   children: ReactNode;
   bgColor?: string;
   className?: string;
@@ -32,6 +33,7 @@ const colorMap: Record<string, string> = {
  */
 export function HighlightBlock({ 
   title,
+  text,
   children, 
   bgColor = "bg-trame",
   className = "",
@@ -45,7 +47,7 @@ export function HighlightBlock({
     : (colorMap[badgeColor.toLowerCase()] || "bg-gray-500");
 
   return (
-    <div className={`relative highlight ${bgColor} ${BREAKOUTS.high.pageFullWidth} py-12 my-16 transition-all duration-300 ${className}`}>
+    <div className={`${mergeMargins("mt-8 mb-8 md:mt-16 md:mb-16", className)} relative highlight ${bgColor} ${BREAKOUTS.high.pageFullWidth} pt-8 pb-12 md:pt-12 md:pb-16 transition-all duration-300`}>
       
       {/* Rendu du badge en haut à droite, aligné avec le conteneur interne pour un rendu premium */}
       {badge && (
@@ -58,9 +60,14 @@ export function HighlightBlock({
 
       <div className={`${BREAKOUTS.med.container} text-gray-800`}>
         {title && (
-          <h3 className="text-3xl font-bold mb-10 max-w-[500px] leading-tight">
+          <h3 className="text-xl md:text-3xl font-extrabold tracking-tight leading-[1.15] md:leading-[1.1] mb-3 md:mb-4 max-w-[500px]">
             {title}
           </h3>
+        )}
+        {text && (
+          <div className="font-semibold text-sm md:text-base text-[#755e45] leading-snug max-w-[560px] mb-6">
+            {text}
+          </div>
         )}
         {children}
       </div>

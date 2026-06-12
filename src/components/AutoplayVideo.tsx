@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from 'react';
-import { BREAKOUTS } from '@/config/layout';
+import { BREAKOUTS, mergeMargins } from '@/config/layout';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 
@@ -11,6 +11,7 @@ interface AutoplayVideoProps {
   overflow?: "low" | "med" | "high";
   caption?: string;
   className?: string;
+  bare?: boolean;
 }
 
 /**
@@ -22,16 +23,25 @@ export function AutoplayVideo({
   ratio = "16/9",
   overflow = "high",
   caption,
-  className = ""
+  className = "",
+  bare = false
 }: AutoplayVideoProps) {
   const outerContainerRef = useRef<HTMLDivElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<any>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [videoRatio, setVideoRatio] = useState<string | null>(null);
 
   // Initialize Video.js for Autoplay Looping Video
   useEffect(() => {
     if (!videoSrc) return;
+
+    // Resolve JW Player script urls automatically to HLS streams
+    let resolvedSrc = videoSrc;
+    const match = videoSrc.match(/\/players\/([a-zA-Z0-9]+)-[a-zA-Z0-9]+\.js/);
+    if (match && match[1]) {
+      resolvedSrc = `https://cdn.jwplayer.com/manifests/${match[1]}.m3u8`;
+    }
 
     const videoElement = document.createElement("video");
     videoElement.className = "video-js w-full h-full object-cover";
@@ -45,27 +55,32 @@ export function AutoplayVideo({
 
     const player = videojs(videoElement, {
       controls: false,
-      autoplay: true,
+      autoplay: false, // Disabling native autoplay so IntersectionObserver controls it
       muted: true,
       loop: true,
       preload: 'auto',
       fluid: false,
       fill: true,
       sources: [{
-        src: videoSrc,
-        type: videoSrc.endsWith('.m3u8') ? 'application/x-mpegURL' : 'video/mp4'
+        src: resolvedSrc,
+        type: resolvedSrc.endsWith('.m3u8') ? 'application/x-mpegURL' : 'video/mp4'
       }]
     });
 
     playerRef.current = player;
 
-    player.on('play', () => {
+    const updateRatio = () => {
+      const width = player.videoWidth();
+      const height = player.videoHeight();
+      if (width && height) {
+        setVideoRatio(`${width}/${height}`);
+      }
       setIsLoaded(true);
-    });
+    };
 
-    player.on('playing', () => {
-      setIsLoaded(true);
-    });
+    player.on('loadedmetadata', updateRatio);
+    player.on('play', updateRatio);
+    player.on('playing', updateRatio);
 
     // Intersection Observer to pause/play based on visibility
     const observer = new IntersectionObserver(
@@ -99,20 +114,44 @@ export function AutoplayVideo({
     };
   }, [videoSrc]);
 
+  if (bare) {
+    return (
+      <div 
+        ref={outerContainerRef}
+        className={`relative w-full overflow-hidden rounded-lg bg-black ${className}`}
+        style={{ aspectRatio: videoRatio || ratio }}
+      >
+        {/* Shimmer skeleton until the video actually plays */}
+        {!isLoaded && (
+          <div className="absolute inset-0 bg-neutral-200 flex items-center justify-center overflow-hidden z-10">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/70 to-transparent animate-shimmer" />
+          </div>
+        )}
+
+        <div
+          ref={videoContainerRef}
+          className={`w-full h-full transition-opacity duration-500 ${
+            isLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      </div>
+    );
+  }
+
   // Breakout layouts
-  let containerClass = "w-full max-w-[672px] mx-auto px-4 md:px-0"; // low
+  let containerClass = "w-full max-w-[672px] mx-auto px-0"; // low
   if (overflow === "med") {
-    containerClass = BREAKOUTS.med.container;
+    containerClass = "w-full max-w-[968px] mx-auto px-0 md:px-7";
   } else if (overflow === "high") {
-    containerClass = BREAKOUTS.high.container;
+    containerClass = "w-full max-w-screen-2xl mx-auto px-0 md:px-7";
   }
 
   return (
-    <figure className={`my-12 ${containerClass} relative transition-all duration-300 ${className}`}>
+    <figure className={`${mergeMargins("mt-12 mb-12", className)} ${containerClass} relative transition-all duration-300`}>
       <div 
         ref={outerContainerRef}
         className="relative w-full overflow-hidden rounded-2xl bg-black"
-        style={{ aspectRatio: ratio }}
+        style={{ aspectRatio: videoRatio || ratio }}
       >
         {/* Shimmer skeleton until the video actually plays */}
         {!isLoaded && (

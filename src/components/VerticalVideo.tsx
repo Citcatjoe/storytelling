@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
+import { mergeMargins } from '@/config/layout';
 
 interface VerticalVideoProps {
   videoSrc?: string;
@@ -180,7 +181,7 @@ export function VerticalVideo({
   }, [videoSrc]);
 
   return (
-    <figure className={`w-full max-w-[320px] mx-auto my-12 transition-all duration-300 ${className}`}>
+    <figure className={`${mergeMargins("mt-12 mb-6 md:mb-12", className)} w-full max-w-[320px] mx-auto transition-all duration-300`}>
       {videoSrc ? (
         /* Mode 1 : Rendu de la vidéo réelle */
         <div 
