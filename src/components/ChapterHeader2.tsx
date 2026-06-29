@@ -174,7 +174,7 @@ export function ChapterHeader2({
       {hasTitle && (
         <div
           ref={cardRef}
-          className="relative z-10 -mt-14 mx-4 bg-white p-4 rounded-xl border border-gray-100/50 shadow-lg md:absolute md:bottom-2 md:left-14 md:mt-0 md:mx-0 md:max-w-[560px] md:p-5 md:rounded-xl md:shadow-xl flex flex-col items-start text-left transform transition-transform duration-500 ease-out"
+          className="relative z-10 -mt-14 mx-4 bg-white p-4 rounded-xl border border-gray-100/50 shadow-lg md:absolute md:bottom-2 md:left-14 md:mt-0 md:mx-0 md:max-w-[585px] md:p-5 md:rounded-xl md:shadow-xl flex flex-col items-start text-left transform transition-transform duration-500 ease-out"
         >
           {formattedNumber && (
             <div className="flex items-center gap-4 mb-2 md:mb-3 select-none">

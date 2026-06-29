@@ -20,6 +20,7 @@ export function Authors({ authors, date }: AuthorsProps) {
               src={`images/${author.img}`} 
               alt={author.name} 
               className="hidden md:block w-12 h-12 rounded-full object-cover bg-gray-100" 
+              loading="lazy"
             />
           )}
           <div className="text-xs leading-tight">

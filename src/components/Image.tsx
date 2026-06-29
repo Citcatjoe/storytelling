@@ -53,9 +53,18 @@ export function Image({
   const shouldApplyRatio = ratio && (!hasImage || forceRatio);
   const containerStyle = shouldApplyRatio ? { aspectRatio: ratio } : {};
 
+  // Check if a rounded class is provided in className or imgClassName to avoid conflicts
+  const hasRoundedInContainer = /\brounded-/.test(className);
+  const containerRounded = hasRoundedInContainer ? "" : "rounded-2xl";
+
+  const hasRoundedInImg = /\brounded-/.test(imgClassName);
+  const imgRounded = hasRoundedInImg 
+    ? "" 
+    : (className.split(/\s+/).filter(c => c.startsWith('rounded-') || c.includes(':rounded-')).join(' ') || "rounded-2xl");
+
   return (
     <div 
-      className={`relative w-full overflow-hidden rounded-lg bg-[#E5DCC3]/10 ${
+      className={`relative w-full overflow-hidden ${containerRounded} bg-[#E5DCC3]/10 ${
         shouldApplyRatio ? "image-fill-container" : ""
       } ${!isLoaded && hasImage && !shouldApplyRatio ? "min-h-[220px]" : ""} ${className}`}
       style={containerStyle}
@@ -90,7 +99,7 @@ export function Image({
                 loading="lazy"
                 onLoad={handleLoad}
                 onError={handleError}
-                className={`w-full bg-slate-50 cursor-zoom-in rounded-lg transition-opacity duration-500 ease-out ${
+                className={`w-full bg-slate-50 cursor-zoom-in ${imgRounded} transition-opacity duration-500 ease-out ${
                   isLoaded ? "opacity-100" : "opacity-0"
                 } ${shouldApplyRatio ? "h-full object-cover" : "h-auto"} ${imgClassName}`}
               />
@@ -103,7 +112,7 @@ export function Image({
               loading="lazy"
               onLoad={handleLoad}
               onError={handleError}
-              className={`w-full transition-opacity duration-500 ease-out ${
+              className={`w-full ${imgRounded} transition-opacity duration-500 ease-out ${
                 isLoaded ? "opacity-100" : "opacity-0"
               } ${shouldApplyRatio ? "h-full object-cover" : "h-auto"} ${imgClassName}`}
             />
@@ -112,7 +121,7 @@ export function Image({
       ) : (
         /* Mode 2 : Place-holder de zoning premium */
         <div 
-          className="w-full h-full rounded-lg bg-[#E5DCC3]/15 border-2 border-dashed border-[#CBBFA0] flex flex-col items-center justify-center p-6 text-center select-none"
+          className={`w-full h-full ${containerRounded} bg-[#E5DCC3]/15 border-2 border-dashed border-[#CBBFA0] flex flex-col items-center justify-center p-6 text-center select-none`}
           style={{ minHeight: ratio ? undefined : '220px', aspectRatio: ratio }}
         >
           <svg 

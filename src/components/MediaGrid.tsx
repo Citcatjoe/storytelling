@@ -11,7 +11,7 @@ interface MediaGridProps {
   placeholderCount?: number;  // Number of placeholder images to display (1, 2, or 3)
   placeholderTxt?: string;    // Custom text to show inside each placeholder
   overflow?: "low" | "med" | "high";
-  caption?: string;
+  caption?: string | null;
   badge?: string;             // Badge label text
   badgeColor?: string;        // Badge background color (violet, rouge, jaune, vert or Tailwind bg-class)
   className?: string;         // Additional CSS classes

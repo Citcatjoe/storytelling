@@ -8,6 +8,25 @@ import "mapbox-gl/dist/mapbox-gl.css";
 // Use the token extracted from the other components
 mapboxgl.accessToken = 'pk.eyJ1IjoiY3JlYXRpdmVsYWJibGlja2ZyIiwiYSI6ImNsZDRjbTM5bjByM3Mzb2wwYXBzN3B3MDYifQ.H5aWzNdSibf-Vd4rPmwhYA';
 
+function createHatchPattern(color = '#E20000', size = 5, lineWidth = 1.2): ImageData | null {
+  if (typeof window === 'undefined') return null;
+  const canvas = window.document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return null;
+
+  ctx.strokeStyle = color;
+  ctx.lineWidth = lineWidth;
+  
+  ctx.beginPath();
+  ctx.moveTo(0, size);
+  ctx.lineTo(size, 0);
+  ctx.stroke();
+
+  return ctx.getImageData(0, 0, size, size);
+}
+
 function getGeojsonBounds(geojson: any): mapboxgl.LngLatBoundsLike | null {
   let minLng = 180, maxLng = -180, minLat = 90, maxLat = -90;
   let hasCoords = false;
@@ -153,15 +172,10 @@ function ZoningMapInner() {
       bounds?: mapboxgl.LngLatBoundsLike;
       zoom?: number;
       highlightedPoints?: string[];
+      highlightedCommunes?: string[];
     }
 
     const SECTION_MAP_STATES: Record<string, MapState> = {
-      "introduction": {
-        mobile: {
-          center: [6.5088800, 46.5137548],
-          zoom: 8.04
-        }
-      },
       "chapitre-1": {
         desktop: {
           center: [6.6589635, 46.5852257],
@@ -171,7 +185,8 @@ function ZoningMapInner() {
           center: [6.6264170, 46.6008984],
           zoom: 8.84
         },
-        highlightedPoints: ["orllati_vaud"]
+        highlightedPoints: ["orllati_vaud"],
+        highlightedCommunes: ["bioley-orjulaz"]
       },
       "chapitre-2": {
         desktop: {
@@ -182,7 +197,8 @@ function ZoningMapInner() {
           center: [6.7935869, 46.6739208],
           zoom: 9.52
         },
-        highlightedPoints: ["grange_verney"]
+        highlightedPoints: ["grange_verney"],
+        highlightedCommunes: ["moudon"]
       },
       "chapitre-3": {
         desktop: {
@@ -193,7 +209,8 @@ function ZoningMapInner() {
           center: [6.2678241, 46.4049140],
           zoom: 9.26
         },
-        highlightedPoints: ["decharge_planifiee"]
+        highlightedPoints: ["decharge_planifiee"],
+        highlightedCommunes: ["arnex"]
       },
       "chapitre-4": {
         desktop: {
@@ -204,7 +221,8 @@ function ZoningMapInner() {
           center: [6.6217462, 46.5896646],
           zoom: 9.33
         },
-        highlightedPoints: ["henny_freres"]
+        highlightedPoints: ["henny_freres"],
+        highlightedCommunes: ["boussens"]
       },
       "chapitre-5": {
         desktop: {
@@ -215,7 +233,8 @@ function ZoningMapInner() {
           center: [6.7750385, 46.4982540],
           zoom: 9.10
         },
-        highlightedPoints: ["zone_viticole"]
+        highlightedPoints: ["zone_viticole"],
+        highlightedCommunes: ["chardonne"]
       },
       "chapitre-6": {
         desktop: {
@@ -226,7 +245,8 @@ function ZoningMapInner() {
           center: [6.4502312, 46.5450134],
           zoom: 8.76
         },
-        highlightedPoints: ["domaine_flogere"]
+        highlightedPoints: ["domaine_flogere"],
+        highlightedCommunes: ["yens"]
       },
       "chapitre-7": {
         desktop: {
@@ -237,7 +257,8 @@ function ZoningMapInner() {
           center: [6.6328458, 46.5582027],
           zoom: 9.35
         },
-        highlightedPoints: ["hameau_convoite"]
+        highlightedPoints: ["hameau_convoite"],
+        highlightedCommunes: ["lausanne"]
       },
       "chapitre-8": {
         desktop: {
@@ -248,7 +269,8 @@ function ZoningMapInner() {
           center: [6.6287718, 46.5468162],
           zoom: 9.35
         },
-        highlightedPoints: ["commission_fonciere"]
+        highlightedPoints: ["commission_fonciere"],
+        highlightedCommunes: ["lausanne"]
       }
     };
 
@@ -338,7 +360,7 @@ function ZoningMapInner() {
       } else {
         const targetBounds = state.bounds || dynamicBounds || vaudBounds;
         map.current.fitBounds(targetBounds, {
-          padding: 25,
+          padding: isMobile ? 15 : 25,
           duration: duration
         });
       }
@@ -361,7 +383,37 @@ function ZoningMapInner() {
       const delayDuration = sectionId.startsWith("chapitre-") ? 1000 : 350; // 1s delay for all chapter focuses, 350ms reset delay for others
 
       const targetPoints = state.highlightedPoints || [];
+      const targetCommunes = state.highlightedCommunes || [];
       console.log(`[ZoningMap] handleSectionChange: ${sectionId}, targetPoints:`, targetPoints);
+
+      // 0. Update commune layers paint properties dynamically
+      if (map.current.getLayer('commune-fills') && map.current.getLayer('commune-borders')) {
+        if (targetCommunes.length > 0) {
+          map.current.setPaintProperty('commune-fills', 'fill-pattern', [
+            'match',
+            ['get', 'id'],
+            targetCommunes, 'hatch-pattern', // Red pattern for matching communes
+            'hatch-pattern-grey' // Grey pattern for others
+          ]);
+          map.current.setPaintProperty('commune-borders', 'line-color', [
+            'match',
+            ['get', 'id'],
+            targetCommunes, '#E20000', // Red border for matching communes
+            '#A0A0A0' // Grey border for others
+          ]);
+          map.current.setPaintProperty('commune-borders', 'line-width', [
+            'match',
+            ['get', 'id'],
+            targetCommunes, 1.5,
+            1.0
+          ]);
+        } else {
+          // Default state when no communes are highlighted (e.g., header, intro)
+          map.current.setPaintProperty('commune-fills', 'fill-pattern', 'hatch-pattern');
+          map.current.setPaintProperty('commune-borders', 'line-color', '#E20000');
+          map.current.setPaintProperty('commune-borders', 'line-width', 1.5);
+        }
+      }
 
       // 1. Hide points that are not highlighted in this section (fade out immediately)
       zoningPoints.forEach((point) => {
@@ -466,24 +518,26 @@ function ZoningMapInner() {
         
         // Wait 0.5 seconds before initiating the zoom and layer fade-in
         const initialTimeout = window.setTimeout(() => {
+          const targetBounds = dynamicBounds || vaudBounds;
           const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-          
-          if (isMobile) {
-            map.current?.flyTo({
-              center: [6.5088800, 46.5137548],
-              zoom: 8.04,
-              duration: 2500
-            });
-          } else {
-            const targetBounds = dynamicBounds || vaudBounds;
-            map.current?.fitBounds(targetBounds, { padding: 25, duration: 2500 });
-          }
+          map.current?.fitBounds(targetBounds, { padding: isMobile ? 15 : 25, duration: 2500 });
 
-          // Delay fade-in of all layers until AFTER the zoom finishes
+          // Delay fade-out of Vaud boundaries until AFTER the zoom focus finishes
           const initialZoomDuration = 2500;
+          const fadeOutVaudTimeout = window.setTimeout(() => {
+            if (map.current?.getLayer('vaud-fill')) {
+              map.current.setPaintProperty('vaud-fill', 'fill-opacity', 0);
+            }
+            if (map.current?.getLayer('vaud-line')) {
+              map.current.setPaintProperty('vaud-line', 'line-opacity', 0);
+            }
+          }, initialZoomDuration);
+          timeoutIds.push(fadeOutVaudTimeout);
+
+          // Delay fade-in of communes layers sequentially after Vaud boundaries fade out
           const startObserverTimeout = window.setTimeout(() => {
             if (map.current?.getLayer('commune-fills')) {
-              map.current.setPaintProperty('commune-fills', 'fill-opacity', 0.12);
+              map.current.setPaintProperty('commune-fills', 'fill-opacity', 0.25);
             }
             if (map.current?.getLayer('commune-borders')) {
               map.current.setPaintProperty('commune-borders', 'line-opacity', 0.6);
@@ -544,7 +598,7 @@ function ZoningMapInner() {
             
             // Initial check to set the first active section
             detectActiveSection();
-          }, initialZoomDuration);
+          }, initialZoomDuration + 1500);
           timeoutIds.push(startObserverTimeout);
         }, 500);
         timeoutIds.push(initialTimeout);
@@ -585,6 +639,18 @@ function ZoningMapInner() {
     map.current.on('load', () => {
       if (!map.current) return;
 
+      // Register the red diagonal hatch pattern
+      const hatchImg = createHatchPattern('#E20000', 5, 1.2);
+      if (hatchImg) {
+        map.current.addImage('hatch-pattern', hatchImg);
+      }
+
+      // Register the grey diagonal hatch pattern for non-highlighted communes
+      const hatchImgGrey = createHatchPattern('#A0A0A0', 5, 1.2);
+      if (hatchImgGrey) {
+        map.current.addImage('hatch-pattern-grey', hatchImgGrey);
+      }
+
       const layers = map.current.getStyle()?.layers;
 
       // Color the global map layers with the warm format colors to match the rest of the site
@@ -606,6 +672,42 @@ function ZoningMapInner() {
           }
         });
       }
+
+      // Canton de Vaud GeoJSON Source
+      map.current.addSource('vaud-boundary', {
+        type: 'geojson',
+        data: './CH-VD.geojson'
+      });
+
+      // Fill layer (initially visible at 0.3 opacity with hatch pattern)
+      map.current.addLayer({
+        'id': 'vaud-fill',
+        'type': 'fill',
+        'source': 'vaud-boundary',
+        'layout': {},
+        'paint': {
+          'fill-pattern': 'hatch-pattern',
+          'fill-opacity': 0.3,
+          'fill-opacity-transition': { duration: 1500 }
+        }
+      });
+
+      // Border layer (initially visible at 1.0 opacity)
+      map.current.addLayer({
+        'id': 'vaud-line',
+        'type': 'line',
+        'source': 'vaud-boundary',
+        'layout': {
+          'line-cap': 'round',
+          'line-join': 'round'
+        },
+        'paint': {
+          'line-color': '#E20000',
+          'line-width': 1.5,
+          'line-opacity': 1.0,
+          'line-opacity-transition': { duration: 1500 }
+        }
+      });
 
       // Fetch local communes GeoJSON and add it to the map
       fetch('./communes.geojson')
@@ -631,22 +733,21 @@ function ZoningMapInner() {
             'source': 'communes',
             'filter': ['any', ['==', ['geometry-type'], 'Polygon'], ['==', ['geometry-type'], 'MultiPolygon']],
             'paint': {
-              'fill-color': '#E20000',
+              'fill-pattern': 'hatch-pattern', // Initial default is red
               'fill-opacity': 0,
               'fill-opacity-transition': { duration: 1500 }
             }
           });
 
-          // Add dotted line layer for borders (Initial opacity = 0, transition duration = 1500)
+          // Add line layer for borders (Initial opacity = 0, transition duration = 1500)
           map.current.addLayer({
             'id': 'commune-borders',
             'type': 'line',
             'source': 'communes',
             'filter': ['any', ['==', ['geometry-type'], 'Polygon'], ['==', ['geometry-type'], 'MultiPolygon']],
             'paint': {
-              'line-color': '#E20000',
+              'line-color': '#E20000', // Initial default is red
               'line-width': 1.5,
-              'line-dasharray': [2, 2],
               'line-opacity': 0,
               'line-opacity-transition': { duration: 1500 }
             }

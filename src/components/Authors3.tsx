@@ -24,6 +24,7 @@ export function Authors3({ authors, date }: AuthorsProps) {
                 src={`images/${author.img}`} 
                 alt={author.name} 
                 className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover bg-gray-100 shadow-lg shrink-0" 
+                loading="lazy"
               />
             )}
             <div className="text-xs leading-tight flex flex-col gap-0.5">
@@ -47,7 +48,7 @@ export function Authors3({ authors, date }: AuthorsProps) {
         ))}
       </div>
       {date && (
-        <div className="text-[10px] text-gray-400 font-mono mt-4 md:mt-10 text-center">
+        <div className="text-[12px] text-[#E20000] font-mono mt-6 md:mt-10 text-left sm:text-center">
           Publié le {date}
         </div>
       )}

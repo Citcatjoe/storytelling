@@ -25,7 +25,7 @@ interface PlotData {
   priceLabel: string;
   swatch: string;          // pastille du panneau de détail
   description: string;
-  detail: string;
+  detail?: string;
 }
 
 const PLOTS: PlotData[] = [
@@ -38,8 +38,8 @@ const PLOTS: PlotData[] = [
     swatch: "bg-[#6d7a55]",
     description:
       "Les bois attenants à un domaine agricole se négocient au prix d'un café le mètre carré. Indissociables des terres qu'ils bordent, ils en suivent le destin.",
-    detail:
-      "Prix maximum licite fixé par la Commission foncière agricole, en vertu de la LDFR.",
+    // detail:
+    //   "Prix maximum licite fixé par la Commission foncière agricole, en vertu de la LDFR.",
   },
   {
     id: "agricole",
@@ -49,9 +49,9 @@ const PLOTS: PlotData[] = [
     priceLabel: "8.-",
     swatch: "bg-[#a3825e]",
     description:
-      "La LDFR plafonne le prix des terres cultivables pour barrer la route à la spéculation. En principe, seuls les exploitants à titre personnel peuvent acquérir.",
-    detail:
-      "C'est ce verrou que contournent les montages avec hommes de paille agricoles.",
+      "La LDFR plafonne le prix des terres cultivables pour barrer la route à la spéculation. En principe, seuls les exploitants à titre personnel peuvent acquérir. C'est ce verrou qu'Orllati parvient à contourner.",
+    // detail:
+    //   "C'est ce verrou que contournent les montages avec hommes de paille agricoles.",
   },
   {
     id: "speciale",
@@ -62,8 +62,8 @@ const PLOTS: PlotData[] = [
     swatch: "bg-[#4f8d8a]",
     description:
       "La dérogation qui autorise serres et cultures hors-sol fait grimper le mètre carré de 50%. Un premier indice: dès qu'on peut construire, la terre s'envole.",
-    detail:
-      "Dérogation au principe d'inconstructibilité de la zone agricole.",
+    // detail:
+    //   "Dérogation au principe d'inconstructibilité de la zone agricole.",
   },
   {
     id: "viticole",
@@ -73,21 +73,21 @@ const PLOTS: PlotData[] = [
     priceLabel: "15.-",
     swatch: "bg-[#748257]",
     description:
-      "Le sommet de l'échelle agricole: les coteaux genevois, culture exigeante et forte valeur paysagère. Quinze francs le mètre carré — toujours 150 fois moins que le béton.",
-    detail:
-      "Foncier rare, soumis lui aussi au prix maximum licite de la LDFR.",
+      "Le sommet de l'échelle agricole: les coteaux genevois, culture exigeante et à forte valeur paysagère. Quinze francs le mètre carré — toujours 36 fois moins que le béton.",
+    // detail:
+    //   "Foncier rare, soumis lui aussi au prix maximum licite de la LDFR.",
   },
   {
     id: "batir",
     label: "Terrain à bâtir (Genève 2025)",
     shortLabel: ["Terrain", "à bâtir"],
-    price: 2270,
-    priceLabel: "2'270.-",
+    price: 540,
+    priceLabel: "540.-",
     swatch: "bg-[#E20000]",
     description:
-      "2'270 francs le mètre carré: sortir une parcelle de la zone agricole multiplie sa valeur par 284. Le déclassement est le jackpot foncier — d'où l'intérêt d'acheter des terres à 8 francs… et d'attendre.",
-    detail:
-      "Prix moyen indicatif du m² constructible. Hors de toute protection LDFR: ici, le marché est libre.",
+      "540 francs le mètre carré: sortir une parcelle de la zone agricole multiplie sa valeur par 67,5. Le déclassement est le jackpot foncier — d'où l'intérêt d'acheter des terres à 8 francs… et d'attendre.",
+    // detail:
+    //   "Prix moyen indicatif du m² constructible. Hors de toute protection LDFR: ici, le marché est libre.",
   },
 ];
 
@@ -370,7 +370,7 @@ export default function LandPriceIsometric() {
 
   const heightOf = (price: number) => {
     const hZoom = price <= 15 ? (price / 15) * H_ZOOM_MAX : H_TOWER_ZOOM;
-    const hReal = Math.max((price / 2270) * H_REAL_MAX, 3);
+    const hReal = Math.max((price / 540) * H_REAL_MAX, 3);
     return lerp(hZoom, hReal, mix);
   };
 
@@ -383,12 +383,16 @@ export default function LandPriceIsometric() {
         @keyframes lpi-drift { from { transform: translateX(-26px); } to { transform: translateX(26px); } }
         @keyframes lpi-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
         
-        .lpi-labels {
+        .lpi-labels, .lpi-annotation {
           transition: transform 0.3s ease;
         }
         @media (max-width: 640px) {
           .lpi-labels {
             transform: scale(1.85) translateY(12px);
+          }
+          .lpi-annotation {
+            transform: scale(1.4) translate(-25px, -15px);
+            transform-origin: 560px 140px;
           }
         }
         @media (prefers-reduced-motion: reduce) { .lpi-anim { animation: none !important; } }
@@ -397,13 +401,20 @@ export default function LandPriceIsometric() {
       {/* En-tête + commutateur d'échelle */}
       <div className="lpi-header flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-b border-[#8E8366]/15 pb-4">
         <h4 className="lpi-title font-semibold text-sm md:text-base text-[#755e45] leading-snug max-w-[560px]">
-          {`Prix maxima licites de vente pour les immeubles agricoles soumis à la loi fédérale sur le droit foncier rural fixés par la La commission foncière agricole pour l'année en cours:`}
+          <a
+            href="https://www.ge.ch/droit-foncier-rural-bail-ferme-agricole/droit-foncier-rural"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline hover:text-accent2 transition-colors duration-200"
+          >
+            {`Prix maxima licites de vente pour les immeubles agricoles soumis à la loi fédérale sur le droit foncier rural fixés par la Commission foncière agricole pour l'année en cours:`}
+          </a>
         </h4>
 
         <div className="lpi-toggle flex bg-[#efe8d4] p-1 rounded-full border border-[#8E8366]/25 w-full sm:w-auto sm:max-w-xs shrink-0 shadow-inner">
           <button
             onClick={() => setMode("zoom")}
-            className={`lpi-toggle-zoom flex-1 sm:flex-none text-center py-1.5 px-4 rounded-full text-xs font-bold transition-all cursor-pointer ${
+            className={`lpi-toggle-zoom flex-1 sm:flex-none text-center py-2.5 px-4 rounded-full text-sm font-bold transition-all cursor-pointer ${
               mode === "zoom" ? "bg-white text-gray-800 shadow-sm" : "text-gray-500 hover:text-gray-800"
             }`}
           >
@@ -411,7 +422,7 @@ export default function LandPriceIsometric() {
           </button>
           <button
             onClick={() => setMode("real")}
-            className={`lpi-toggle-real flex-1 sm:flex-none text-center py-1.5 px-4 rounded-full text-xs font-bold transition-all cursor-pointer ${
+            className={`lpi-toggle-real flex-1 sm:flex-none text-center py-2.5 px-4 rounded-full text-sm font-bold transition-all cursor-pointer ${
               mode === "real" ? "bg-[#E20000] text-white shadow-sm" : "text-gray-500 hover:text-gray-800"
             }`}
           >
@@ -427,7 +438,7 @@ export default function LandPriceIsometric() {
           overflow="visible"
           className="lpi-svg w-full h-auto block"
           role="img"
-          aria-label="Comparaison isométrique des prix du foncier à Genève: de 2 francs le m² de forêt à 2'270 francs le m² constructible"
+          aria-label="Comparaison isométrique des prix du foncier à Genève: de 2 francs le m² de forêt à 540 francs le m² constructible"
         >
           <defs>
             {/* fenêtres de la tour, inclinées pour épouser les faces iso */}
@@ -632,20 +643,20 @@ export default function LandPriceIsometric() {
               x={700} y={41} textAnchor="middle" fontSize={16.5} fontWeight={700} fill="#E20000"
               style={{ fontFamily: "var(--font-mono)" }}
             >
-              {`Fr. 2'270.-/m² — hors échelle`}
+              {`Fr. 540.-/m² — hors échelle`}
             </text>
           </g>
 
           {/* annotation du choc foncier (échelle réelle) */}
           <g className="lpi-annotation" opacity={mix} pointerEvents="none">
-            <line x1={612} y1={146} x2={646} y2={158} stroke="#E20000" strokeWidth={1.2} />
-            <text x={606} y={132} textAnchor="end" fontSize={26} fontWeight={800} fill="#E20000"
+            <line x1={566} y1={148} x2={646} y2={158} stroke="#E20000" strokeWidth={1.5} />
+            <text x={560} y={120} textAnchor="end" fontSize={36} fontWeight={800} fill="#E20000"
               style={{ fontFamily: "var(--font-mono)" }}>
-              × 284
+              × 67,5
             </text>
-            <text x={606} y={150} textAnchor="end" fontSize={10.5} fontWeight={600} fill="#7a4a3a">
-              <tspan x={606} dy={0}>1 m² à bâtir vaut</tspan>
-              <tspan x={606} dy={12}>284 m² de terre agricole</tspan>
+            <text x={560} y={140} textAnchor="end" fontSize={14} fontWeight={600} fill="#7a4a3a">
+              <tspan x={560} dy={0}>1 m² à bâtir vaut</tspan>
+              <tspan x={560} dy={16}>67,5 m² de terre agricole</tspan>
             </text>
           </g>
         </svg>

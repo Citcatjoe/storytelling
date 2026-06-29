@@ -1,6 +1,7 @@
 interface CreditItem {
   name: string;
   produces: string;
+  link?: string;
 }
 
 interface CreditsProps {
@@ -9,7 +10,7 @@ interface CreditsProps {
 
 interface GroupedCredit {
   produces: string;
-  names: string[];
+  people: { name: string; link?: string }[];
 }
 
 export function Credits({ items }: CreditsProps) {
@@ -18,12 +19,13 @@ export function Credits({ items }: CreditsProps) {
   // Regrouper les crédits qui partagent le même label "produces"
   const groupedItems = items.reduce<GroupedCredit[]>((acc, current) => {
     const existing = acc.find(item => item.produces === current.produces);
+    const person = { name: current.name, link: current.link };
     if (existing) {
-      existing.names.push(current.name);
+      existing.people.push(person);
     } else {
       acc.push({
         produces: current.produces,
-        names: [current.name]
+        people: [person]
       });
     }
     return acc;
@@ -36,8 +38,21 @@ export function Credits({ items }: CreditsProps) {
         {groupedItems.map((group, idx) => (
           <div key={idx} className={idx === groupedItems.length - 1 ? "" : "mb-4"}>
             <div className="font-bold text-black">{group.produces}</div>
-            {group.names.map((name, nameIdx) => (
-              <div key={nameIdx} className="text-gray-700">{name}</div>
+            {group.people.map((person, pIdx) => (
+              <div key={pIdx} className="text-gray-700">
+                {person.link ? (
+                  <a
+                    href={person.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:text-accent2 transition-colors"
+                  >
+                    {person.name}
+                  </a>
+                ) : (
+                  person.name
+                )}
+              </div>
             ))}
           </div>
         ))}

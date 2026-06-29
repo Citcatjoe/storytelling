@@ -61,7 +61,11 @@ export function HighlightBlock({
       <div className={`${BREAKOUTS.med.container} text-gray-800`}>
         {title && (
           <h3 className="text-xl md:text-3xl font-extrabold tracking-tight leading-[1.15] md:leading-[1.1] mb-3 md:mb-4 max-w-[500px]">
-            {title}
+            {title.split(/<br\s*\/?>/i).map((line, i) => (
+              <span key={i} className="block">
+                {line}
+              </span>
+            ))}
           </h3>
         )}
         {text && (

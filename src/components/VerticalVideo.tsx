@@ -7,8 +7,9 @@ import { mergeMargins } from '@/config/layout';
 
 interface VerticalVideoProps {
   videoSrc?: string;
+  poster?: string;
   placeholderTxt?: string;
-  caption?: string;
+  caption?: string | null;
   className?: string;
 }
 
@@ -19,6 +20,7 @@ interface VerticalVideoProps {
  */
 export function VerticalVideo({
   videoSrc,
+  poster,
   placeholderTxt = "Zoning Vidéo 9:16",
   caption,
   className = ""
@@ -117,9 +119,12 @@ export function VerticalVideo({
     if (!videoSrc) return;
 
     const videoElement = document.createElement("video");
-    videoElement.className = "video-js w-full h-full object-cover";
+    videoElement.className = "video-js w-full h-full object-cover scale-[1.015] !bg-transparent";
     videoElement.setAttribute("playsinline", "true");
     videoElement.setAttribute("webkit-playsinline", "true");
+    if (poster) {
+      videoElement.setAttribute("poster", poster);
+    }
 
     if (videoContainerRef.current) {
       videoContainerRef.current.appendChild(videoElement);
@@ -131,6 +136,7 @@ export function VerticalVideo({
       preload: 'auto',
       fluid: false,
       fill: true,
+      poster: poster,
       sources: [{
         src: videoSrc,
         type: videoSrc.endsWith('.m3u8') ? 'application/x-mpegURL' : 'video/mp4'
@@ -182,12 +188,19 @@ export function VerticalVideo({
 
   return (
     <figure className={`${mergeMargins("mt-12 mb-6 md:mb-12", className)} w-full max-w-[320px] mx-auto transition-all duration-300`}>
+      <style>{`
+        .video-js, .video-js .vjs-tech, .video-js .vjs-poster, video { background-color: transparent !important; }
+        video::-webkit-media-controls-start-playback-button { display: none !important; }
+      `}</style>
       {videoSrc ? (
         /* Mode 1 : Rendu de la vidéo réelle */
         <div 
           ref={outerContainerRef}
-          className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-black group" 
-          style={{ aspectRatio: '9/16' }}
+          className={`relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-100 group bg-cover bg-center ${poster ? 'bg-transparent' : 'bg-transparent'}`}
+          style={{ 
+            aspectRatio: '9/16',
+            backgroundImage: poster ? `url('${poster}')` : undefined
+          }}
         >
           <div
             ref={videoContainerRef}

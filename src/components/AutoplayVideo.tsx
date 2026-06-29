@@ -9,7 +9,7 @@ interface AutoplayVideoProps {
   videoSrc: string;
   ratio?: string; // e.g. "16/9", "3/2"
   overflow?: "low" | "med" | "high";
-  caption?: string;
+  caption?: string | null;
   className?: string;
   bare?: boolean;
 }
@@ -44,7 +44,7 @@ export function AutoplayVideo({
     }
 
     const videoElement = document.createElement("video");
-    videoElement.className = "video-js w-full h-full object-cover";
+    videoElement.className = "video-js w-full h-full object-cover scale-[1.015]";
     videoElement.setAttribute("playsinline", "true");
     videoElement.setAttribute("webkit-playsinline", "true");
     videoElement.muted = true; // Ensure native mute is set
@@ -118,7 +118,7 @@ export function AutoplayVideo({
     return (
       <div 
         ref={outerContainerRef}
-        className={`relative w-full overflow-hidden rounded-lg bg-black ${className}`}
+        className={`relative w-full overflow-hidden rounded-2xl bg-black ${className}`}
         style={{ aspectRatio: videoRatio || ratio }}
       >
         {/* Shimmer skeleton until the video actually plays */}

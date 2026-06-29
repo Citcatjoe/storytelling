@@ -23,6 +23,7 @@ export function Authors2({ authors, date }: AuthorsProps) {
               alt={author.name} 
               className="w-12 h-12 rounded-full object-cover ring-2 ring-[#f7f3ea] bg-gray-100" 
               style={{ zIndex: authors.length - i }}
+              loading="lazy"
             />
           )
         ))}

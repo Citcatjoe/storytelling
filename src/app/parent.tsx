@@ -43,7 +43,7 @@ export default function ParentLayout({
         <Consent />
       </head>
       <body
-        className="font-sans pt-16 pb-16 2xl:pt-24 transition-all duration-300 ease-in-out bg-slate-100"
+        className="font-sans pt-16 pb-0 2xl:pb-16 2xl:pt-24 transition-all duration-300 ease-in-out bg-background"
       >
         <div className="overflow-x-hidden w-full relative">
           {children}

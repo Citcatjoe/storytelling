@@ -6,7 +6,7 @@ import { mergeMargins } from "@/config/layout";
 interface DetachableBlockProps {
   children: React.ReactNode;
   ratio?: string; // "16/9", "3/2", "3/4", "1/1", etc.
-  caption?: string;
+  caption?: string | null;
   badge?: string;
   badgeColor?: string;
   className?: string;
@@ -264,8 +264,9 @@ export function DetachableBlock({
         {!isDetached && title && (
           <div className="absolute top-4 left-4 z-10 select-none">
             <span
-              className="inline-flex items-center px-4 py-2 bg-white text-xs font-semibold text-gray-800 rounded-xl border border-gray-100/50 shadow-md font-sans"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-xs font-semibold text-gray-800 rounded-xl border border-gray-100/50 shadow-md font-sans"
             >
+              <span className="h-1.5 w-1.5 rounded-full bg-[#E20000] shrink-0" />
               {title}
             </span>
           </div>
@@ -301,13 +302,13 @@ export function DetachableBlock({
                 animateMinimize(true);
                 wasMinimizedAutomaticallyRef.current = false;
               }}
-              className="absolute bottom-2 right-2 bg-black text-white hover:bg-neutral-800 rounded-full w-7 h-7 flex items-center justify-center shadow-lg border border-white/20 transition-transform hover:scale-105 cursor-pointer z-50"
+              className="absolute bottom-2 right-2 bg-black text-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg border border-white/20 cursor-pointer z-50"
               aria-label="Réduire"
               title="Réduire la carte"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4"
+                className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

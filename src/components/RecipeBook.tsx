@@ -13,17 +13,17 @@ interface Ingredient {
 
 const INGREDIENTS: Ingredient[] = [
   { label: "100’000 francs", chipLabel: "De l’argent" },
-  { label: "Un paysan avec un numéro d’exploitant" },
+  { label: "Un ou deux paysans avec un numéro d’exploitant" },
   { label: "Un réseau d’informateurs" },
   { label: "Un notaire coulant" },
-  { label: "Une Commission foncière aux petits oignons" },
+  { label: "Des membres de Commission foncière aux petits oignons" },
   { label: "Des autorités cuites au bain marie" },
   { label: "Une louche de temps" },
 ];
 
 // Chaque étape référence les ingrédients requis par leur index dans INGREDIENTS
 const STEPS: { title: string; ingredients: number[] }[] = [
-  { title: "Créer une société anonyme agricole au nom du paysan", ingredients: [0, 1, 3] },
+  { title: "Intégrer des paysans dans une société anonyme agricole", ingredients: [0, 1, 3] },
   { title: "Trouver un terrain à acquérir", ingredients: [2, 6] },
   { title: "Formaliser la vente", ingredients: [3, 0] },
   { title: "Obtenir l’aval de la Commission foncière", ingredients: [4, 5] },
@@ -175,8 +175,8 @@ export function RecipeBook({ className = "" }: RecipeBookProps) {
         {/* ————— ONGLETS (mobile uniquement, style du commutateur LandPriceIsometric) ————— */}
         <div className="mb-3 flex w-full rounded-full border border-[#8E8366]/25 bg-[#efe8d4] p-1 shadow-inner md:hidden" role="tablist" aria-label="La recette">
           {([
-            ["ingredients", "Les ingrédients", <BasketIcon key="i" className="h-3.5 w-3.5" />],
-            ["steps", "Les étapes", <StepsIcon key="s" className="h-3.5 w-3.5" />],
+            ["ingredients", "Les ingrédients", <BasketIcon key="i" className="h-4 w-4" />],
+            ["steps", "Les étapes", <StepsIcon key="s" className="h-4 w-4" />],
           ] as const).map(([key, label, icon]) => (
             <button
               key={key}
@@ -184,7 +184,7 @@ export function RecipeBook({ className = "" }: RecipeBookProps) {
               role="tab"
               aria-selected={tab === key}
               onClick={() => setTab(key)}
-              className={`flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-full px-4 py-1.5 text-center text-xs font-bold transition-all ${
+              className={`flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-full px-0 py-2.5 text-center text-sm font-bold transition-all ${
                 tab === key
                   ? "bg-white text-gray-800 shadow-sm"
                   : "text-gray-500 hover:text-gray-800"
@@ -199,10 +199,10 @@ export function RecipeBook({ className = "" }: RecipeBookProps) {
         <div className="grid grid-cols-1 gap-3 md:grid-cols-[2fr_3fr] md:gap-4">
 
           {/* ————— ZONE DE GAUCHE : LES INGRÉDIENTS ————— */}
-          <div className={`${tab === "ingredients" ? "block" : "hidden"} rounded-2xl bg-[#8E8366]/10 p-6 md:block md:p-8`}>
-            <PanelTitle icon={<BasketIcon className="h-6 w-6 md:h-7 md:w-7" />}>Les ingrédients</PanelTitle>
+          <div className={`${tab === "ingredients" ? "block" : "hidden"} rounded-2xl bg-[#8E8366]/10 p-4 md:block md:p-8`}>
+            <PanelTitle icon={<BasketIcon className="h-5 w-5 md:h-7 md:w-7" />}>Les ingrédients</PanelTitle>
 
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-3 md:mt-5 space-y-2 md:space-y-3">
               {INGREDIENTS.map((ingredient, i) => {
                 const isActive = activeIngredients.includes(i);
                 return (
@@ -215,12 +215,12 @@ export function RecipeBook({ className = "" }: RecipeBookProps) {
                         sur mobile les panneaux sont en onglets, le lien visuel
                         avec l'étape affichée n'aurait aucun sens */}
                     <span
-                      className={`mt-[11px] h-[7px] w-[7px] shrink-0 rounded-[1.5px] bg-[#8E8366]/50 transition-colors duration-500 ${
+                      className={`mt-[9px] md:mt-[11px] h-[7px] w-[7px] shrink-0 rounded-[1.5px] bg-[#8E8366]/50 transition-colors duration-500 ${
                         isActive ? "md:bg-[#E20000]" : ""
                       }`}
                     />
                     <span
-                      className={`font-hand text-2xl md:text-[26px] font-semibold leading-tight text-[#736a52]/80 transition-all duration-500 ${
+                      className={`font-hand text-xl md:text-[26px] font-semibold leading-tight text-[#736a52]/80 transition-all duration-500 ${
                         isActive ? "md:text-[#5c5440]" : ""
                       }`}
                     >
@@ -233,8 +233,8 @@ export function RecipeBook({ className = "" }: RecipeBookProps) {
           </div>
 
           {/* ————— ZONE DE DROITE : LES ÉTAPES ————— */}
-          <div className={`${tab === "steps" ? "flex" : "hidden"} flex-col rounded-2xl bg-[#FAF8F4] p-6 md:flex md:p-8`}>
-            <PanelTitle icon={<StepsIcon className="h-6 w-6 md:h-7 md:w-7" />}>Les étapes</PanelTitle>
+          <div className={`${tab === "steps" ? "flex" : "hidden"} flex-col rounded-2xl bg-[#FAF8F4] p-4 md:flex md:p-8`}>
+            <PanelTitle icon={<StepsIcon className="h-5 w-5 md:h-7 md:w-7" />}>Les étapes</PanelTitle>
 
             {/* Toutes les étapes occupent la même cellule de grille : la zone
                 prend la hauteur de la plus grande, le contenu change sans saut */}
@@ -243,25 +243,25 @@ export function RecipeBook({ className = "" }: RecipeBookProps) {
               {/* Page de garde du livre de recettes */}
               <div
                 aria-hidden={page !== 0}
-                className={`col-start-1 row-start-1 flex flex-col items-center justify-center py-10 text-center md:py-6 ${
+                className={`col-start-1 row-start-1 flex flex-col items-center justify-center py-5 md:py-6 text-center ${
                   page === 0 ? "rb-fade" : "invisible pointer-events-none"
                 }`}
               >
-                <ChefHatIcon className="h-10 w-10 text-[#E20000] md:h-12 md:w-12" />
-                <h5 className="font-hand mt-4 max-w-[400px] text-3xl md:text-4xl font-bold leading-tight text-[#5c5440]">
-                  La recette de l’homme de paille
-                </h5>
-                <p
-                  className={`mt-3 max-w-[360px] text-sm md:text-[15px] font-light leading-relaxed text-[#736a52] ${page === 0 ? "rb-fade" : ""}`}
-                  style={page === 0 ? { animationDelay: "120ms" } : undefined}
-                >
+                <ChefHatIcon className="h-8 w-8 text-[#E20000] md:h-12 md:w-12" />
+                <h5 className="font-hand mt-3 md:mt-4 max-w-[400px] text-2xl md:text-4xl font-bold leading-none text-[#5c5440]">
                   Comment mettre la main sur des terres agricoles sans être
                   agriculteur, en cinq étapes et sept ingrédients.
-                </p>
+                </h5>
+                {/* <p
+                  className={`mt-2 md:mt-3 max-w-[360px] text-sm md:text-[15px] font-light leading-relaxed text-[#736a52] ${page === 0 ? "rb-fade" : ""}`}
+                  style={page === 0 ? { animationDelay: "120ms" } : undefined}
+                >
+                  
+                </p> */}
                 <button
                   type="button"
                   onClick={handleNext}
-                  className={`mt-6 inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#E20000] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#c40000] ${page === 0 ? "rb-fade" : ""}`}
+                  className={`mt-4 md:mt-6 inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#E20000] px-4 py-2 md:px-5 md:py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#c40000] ${page === 0 ? "rb-fade" : ""}`}
                   style={page === 0 ? { animationDelay: "220ms" } : undefined}
                 >
                   Commencer la recette
@@ -277,34 +277,34 @@ export function RecipeBook({ className = "" }: RecipeBookProps) {
                   <div
                     key={i}
                     aria-hidden={!isCurrent}
-                    className={`col-start-1 row-start-1 flex flex-col items-center justify-center py-10 text-center md:py-6 ${
+                    className={`col-start-1 row-start-1 flex flex-col items-center justify-center py-5 md:py-6 text-center ${
                       isCurrent ? "rb-fade" : "invisible pointer-events-none"
                     }`}
                   >
-                    <p className="inline-flex items-center gap-2 rounded-full border border-[#8E8366]/25 bg-white/80 px-4 py-2 shadow-sm">
-                      <span className="text-[13px] md:text-sm font-bold uppercase leading-none tracking-[0.08em] text-[#736a52]">Étape</span>
-                      <span className="text-2xl md:text-3xl font-extrabold leading-none text-[#E20000]">{i + 1}</span>
-                      <span className="text-[13px] md:text-sm font-semibold leading-none text-[#736a52]/60">/ {STEPS.length}</span>
+                    <p className="inline-flex items-center gap-2 rounded-full border border-[#8E8366]/25 bg-white/80 px-3 py-1.5 md:px-4 md:py-2 shadow-sm">
+                      <span className="text-xs md:text-sm font-bold uppercase leading-none tracking-[0.08em] text-[#736a52]">Étape</span>
+                      <span className="text-xl md:text-3xl font-extrabold leading-none text-[#E20000]">{i + 1}</span>
+                      <span className="text-xs md:text-sm font-semibold leading-none text-[#736a52]/60">/ {STEPS.length}</span>
                     </p>
 
-                    <h5 className="mt-4 max-w-[440px] text-2xl md:text-[28px] font-bold leading-snug tracking-tight text-[#5c5440]">
+                    <h5 className="mt-3 md:mt-4 max-w-[440px] text-xl md:text-[28px] font-bold leading-snug tracking-tight text-[#5c5440]">
                       {s.title}
                     </h5>
 
                     {/* Les ingrédients à combiner, empilés */}
                     <p
-                      className={`font-hand mt-6 text-lg md:text-xl font-semibold leading-none text-[#736a52]/70 ${isCurrent ? "rb-fade" : ""}`}
+                      className={`font-hand mt-4 md:mt-6 text-base md:text-xl font-semibold leading-none text-[#736a52]/70 ${isCurrent ? "rb-fade" : ""}`}
                       style={isCurrent ? { animationDelay: "120ms" } : undefined}
                     >
                       {s.ingredients.length > 1
                         ? "Combiner les ingrédients suivants :"
                         : "Ajouter l’ingrédient suivant :"}
                     </p>
-                    <div className="mt-3 flex flex-col items-center gap-2">
+                    <div className="mt-2 md:mt-3 flex flex-col items-center gap-1.5 md:gap-2">
                       {s.ingredients.map((ingIdx, j) => (
                         <span
                           key={ingIdx}
-                          className={`font-hand inline-flex items-center gap-2 rounded-full border border-[#8E8366]/25 bg-white/80 px-4 py-1.5 text-xl md:text-[22px] font-semibold leading-none text-[#736a52] ${
+                          className={`font-hand inline-flex items-center gap-1.5 md:gap-2 rounded-full border border-[#8E8366]/25 bg-white/80 px-3 py-1 md:px-4 md:py-1.5 text-base md:text-[22px] font-semibold leading-none text-[#736a52] ${
                             isCurrent ? "rb-fade" : ""
                           }`}
                           style={isCurrent ? { animationDelay: `${200 + j * 110}ms` } : undefined}
@@ -321,16 +321,16 @@ export function RecipeBook({ className = "" }: RecipeBookProps) {
               {/* Page finale : bon appétit */}
               <div
                 aria-hidden={page !== PAGE_COUNT - 1}
-                className={`col-start-1 row-start-1 flex flex-col items-center justify-center py-10 text-center md:py-6 ${
+                className={`col-start-1 row-start-1 flex flex-col items-center justify-center py-5 md:py-6 text-center ${
                   page === PAGE_COUNT - 1 ? "rb-fade" : "invisible pointer-events-none"
                 }`}
               >
-                <UtensilsIcon className="h-10 w-10 text-[#E20000] md:h-12 md:w-12" />
-                <h5 className="font-hand mt-4 max-w-[400px] text-3xl md:text-4xl font-bold leading-tight text-[#5c5440]">
+                <UtensilsIcon className="h-8 w-8 text-[#E20000] md:h-12 md:w-12" />
+                <h5 className="font-hand mt-3 md:mt-4 max-w-[400px] text-2xl md:text-4xl font-bold leading-tight text-[#5c5440]">
                   Bon appétit !
                 </h5>
                 <p
-                  className={`mt-3 max-w-[380px] text-sm md:text-[15px] font-light leading-relaxed text-[#736a52] ${page === PAGE_COUNT - 1 ? "rb-fade" : ""}`}
+                  className={`mt-2 md:mt-3 max-w-[380px] text-sm md:text-[15px] font-light leading-relaxed text-[#736a52] ${page === PAGE_COUNT - 1 ? "rb-fade" : ""}`}
                   style={page === PAGE_COUNT - 1 ? { animationDelay: "120ms" } : undefined}
                 >
                   Félicitations : vous avez mis la main sur des terres agricoles
@@ -340,7 +340,7 @@ export function RecipeBook({ className = "" }: RecipeBookProps) {
                 <button
                   type="button"
                   onClick={() => handleDotClick(0)}
-                  className={`mt-6 inline-flex cursor-pointer items-center gap-2 rounded-full border border-[#8E8366]/40 bg-white/80 px-5 py-2.5 text-sm font-bold text-[#736a52] shadow-sm transition-all hover:border-[#8E8366]/70 hover:bg-[#f7f3ea] ${page === PAGE_COUNT - 1 ? "rb-fade" : ""}`}
+                  className={`mt-4 md:mt-6 inline-flex cursor-pointer items-center gap-2 rounded-full border border-[#8E8366]/40 bg-white/80 px-4 py-2 md:px-5 md:py-2.5 text-sm font-bold text-[#736a52] shadow-sm transition-all hover:border-[#8E8366]/70 hover:bg-[#f7f3ea] ${page === PAGE_COUNT - 1 ? "rb-fade" : ""}`}
                   style={page === PAGE_COUNT - 1 ? { animationDelay: "220ms" } : undefined}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
