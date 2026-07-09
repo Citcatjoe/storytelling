@@ -36,12 +36,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: STORY.title,
+  title: STORY.metaTitle || STORY.title,
   description: STORY.description,
   authors: [{ name: STORY.author }],
 
   openGraph: {
-    title: STORY.title,
+    title: STORY.ogTitle || STORY.title,
     siteName: STORY.siteName,
     url: STORY.url,
     description: STORY.description,
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: STORY.twitterHandle,
-    title: STORY.title,
+    title: STORY.ogTitle || STORY.title,
     description: STORY.description,
     images: [ABSOLUTE_SOCIAL_URL],
   },

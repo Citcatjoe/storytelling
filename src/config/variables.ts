@@ -6,6 +6,8 @@
 export const STORY = {
   // Infos générales
   title: "Business de l’ombre: comment le groupe Orllati accapare des terres agricoles ",
+  metaTitle: "Immobilier: Comment le groupe Orllati accapare des terres agricoles?",
+  ogTitle: "Comment des terres agricoles sont accaparées par Orllati",
   titleDisplay: "Business de l’ombre:<br>comment le groupe Orllati<br>accapare des terres agricoles ",
   description: "Via des sociétés agricoles, le groupe de construction Orllati acquiert des parcelles normalement réservées aux paysans. Enquête sur un business de l'ombre",
   author: "Camille Krafft",
