@@ -745,11 +745,11 @@ export default function Content() {
               Le jour de notre visite, les Alpes sont encore nimbées d’une neige de printemps qui scintille au soleil. <em>«C’est Orllati qui est propriétaire»</em>, confirme d’entrée de jeu un ouvrier occupé à des travaux de terrassement devant les serres. <em>«Évidemment qu’il rêve de construire ici, mais je ne sais pas quand ce sera possible.»</em>
             </p>
 
-            <QuoteBlock 
+            {/* <QuoteBlock 
               quote="La vente devait avoir lieu au cinéma Rex de Vevey. Mais sur place on a appris qu’Orllati avait tout racheté la veille"
               author="Un habitant de Lavaux"
               accent="accent2"
-            />
+            /> */}
 
             {/* SideBlock à droite (portrait) placé avant le premier des deux paragraphes pour float desktop correct */}
             <SideBlock 
@@ -764,7 +764,8 @@ export default function Content() {
             />
 
             <p className="text-lg mb-6">
-              Selon plusieurs témoignages, cette acquisition porte également la griffe du lutteur Emmanuel Crausaz. Les parcelles concernées devaient être vendues aux enchères durant le Covid, à la suite de la faillite du propriétaire précédent. Deux vignerons étaient intéressés, mais impossible de régater: <em>«Orllati a posé deux millions, et la vente a été annulée»</em>, souffle une source proche du dossier. Un habitant de la région ajoute: <em>«C’est vraiment dommage de laisser ces serres à l’abandon. Des gens demandent souvent à la commune s’ils ne pourraient pas avoir un espace pour cultiver à l’intérieur.»</em> Quant aux vignes, leur exploitation serait aujourd'hui sous-traitée à un viticulteur du coin.
+              Selon plusieurs témoignages, cette acquisition porte également la griffe du lutteur Emmanuel Crausaz. Les parcelles concernées devaient être vendues aux enchères durant le Covid, à la suite de la faillite du propriétaire précédent. Deux vignerons étaient intéressés, mais impossible de régater. Selon l'ancien propriétaire, avec qui Blick s'est entretenu, l'ensemble a été vendu à Henny Frères SA pour un total de 1 370 000 francs*. Un habitant de la région ajoute: <em>«C’est vraiment dommage de laisser ces serres à l’abandon. Des gens demandent souvent à la commune s’ils ne pourraient pas avoir un espace pour cultiver à l’intérieur.»</em> Quant aux vignes, leur exploitation serait aujourd'hui sous-traitée à un viticulteur du coin.*
+              <span className="block mt-6 text-sm italic text-gray-400">* Passage modifié le 24 juillet 2026 suite à des échanges avec l’ancien propriétaire.</span>
             </p>
 
             <SideBlock 
